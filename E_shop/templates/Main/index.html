@@ -26,7 +26,7 @@
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 d-flex justify-content-center position-relative align-items-center">
                                     <div class="show-case">
                                         <div class="hero-slide-image slider-2">
-                                            <img src="{%static 'assets/images/hero/inner-img/hero-2-1.png' %}" alt="" />
+                                            <img src="{%static 'assets/images/hero/inner-img/bb' %}" alt="" />
                                         </div>
                                     </div>
                                 </div>
@@ -51,7 +51,7 @@
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 d-flex justify-content-center position-relative align-items-center">
                                     <div class="show-case">
                                         <div class="hero-slide-image slider-2">
-                                            <img src="{%static 'assets/images/hero/inner-img/hero-2-1.png' %}" alt="" />
+                                            <img src="{%static 'assets/images/hero/inner-img/bb1.jpg' %}" alt="" />
                                         </div>
                                     </div>
                                 </div>
@@ -116,22 +116,22 @@
 
                         {% for prod in product %}
                             <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-xs-6 mb-30px">
-                                <!-- Single Prodect -->
+                                <!-- Single Product -->
                                 <div class="product">
                                     <span class="badges">
                                         <span class="new">{{prod.condition}}</span>
                                     </span>
                                     <div class="thumb">
-                                        <a href="single-product.html" class="image">
-                                            <img src="{{prod.image}}" alt="Product" style="height:250px;  " />
+                                        <a href="/products/{{ prod.id }}" class="image">
+                                            <img src="{{prod.image}}" alt="Product" style="height:250px; " />
                                             <img class="hover-image" src="{{prod.image}}" alt="Product" />
                                         </a>
                                     </div>
                                     <div class="content">
                                             <br>
-                                        <span class="category"><a href="#">{{prod.categories}}</a></span>
+                                        <span class="category"><a href="/products/{{ products.id }}">{{prod.categories}}</a></span>
 
-                                        <h5 class="title"><a href="single-product.html">{{prod.name | truncatewords:10}}
+                                        <h5 class="title"><a href="/products{{ prod.id }}">{{prod.name | truncatewords:10}}
                                             </a>
                                         </h5>
                                         <span class="price">
@@ -139,11 +139,11 @@
                                         </span>
                                     </div>
                                     <div class="actions">
-                                                <button title="Add To Cart" class="action add-to-cart" data-bs-toggle="modal" data-bs-target="#exampleModal-Cart"><i
+                                                <button title="Add To Cart" class="action add-to-cart" data-bs-toggle="modal" data-bs-target="#exampleModal-Cart-{{forloop.counter}}"><i
                                                     class="pe-7s-shopbag"></i></button>
                                                 <button class="action wishlist" title="Wishlist" data-bs-toggle="modal" data-bs-target="#exampleModal-Wishlist"><i
                                                         class="pe-7s-like"></i></button>
-                                                <button class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="pe-7s-look"></i></button>
+                                                <button class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal-{{ forloop.counter }}"><i class="pe-7s-look"></i></button>
                                                 <button class="action compare" title="Compare" data-bs-toggle="modal" data-bs-target="#exampleModal-Compare"><i
                                                         class="pe-7s-refresh-2"></i></button>
                                             </div>

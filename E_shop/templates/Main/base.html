@@ -22,6 +22,9 @@
     <link rel="stylesheet" href="{%static 'assets/css/swiper-bundle.min.css' %}">
     <link rel="stylesheet" href="{%static 'assets/css/venobox.css' %}">
     <link rel="stylesheet" href="{%static 'assets/css/jquery-ui.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'fontawesome/css/all.min.css' %}">
+
     <!-- Style CSS -->
     <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
     <!-- Minify Version -->
@@ -30,8 +33,6 @@
 </head>
 
 <body>
-
-
 
 
  <div class="main-wrapper">
@@ -51,7 +52,14 @@
                                     <li><a href="tel:0123456789"><i class="fa fa-phone"></i> +012 3456 789</a></li>
                                     <li><a href="mailto:demo@example.com"><i class="fa fa-envelope-o"></i> demo@example.com</a></li>
                                     <li><a href="my-account.html"><i class="fa fa-user"></i> Account</a></li>
-                                </ul>
+
+                                    {% if user.is_authenticated %}
+                                    <li><a href="{% url 'logout' %}"><i class="fa fa-unlock"></i> Logout</a></li>
+                                    {% else %}
+                                    <li><a href="{% url 'login' %}"><i class="fa fa-lock"></i> Login</a></li>
+                                    {% endif %}
+                               </ul>
+
                             </div>
                         </div>
                     </div>
@@ -69,8 +77,8 @@
                         </div>
                         <div class="col-lg-6 d-none d-lg-block">
                             <div class="search-element">
-                                <form action="#">
-                                    <input type="text" placeholder="Search" />
+                                <form action="/search/" method="get">
+                                    <input type="text" placeholder="Search" name="query" id="query"/>
                                     <button><i class="pe-7s-search"></i></button>
                                 </form>
                             </div>
@@ -84,8 +92,8 @@
                                 <!-- Single Wedge End -->
                                 <a href="#offcanvas-cart" class="header-action-btn header-action-btn-cart offcanvas-toggle pr-0">
                                     <i class="pe-7s-shopbag"></i>
-                                    <span class="header-action-num">01</span>
-                                    <!-- <span class="cart-amount">€30.00</span> -->
+                                    <span class="header-action-num">{{request.session.cart|length}}</span>
+                                    <!-- <span class="Cart-amount">€30.00</span> -->
                                 </a>
                                 <a href="#offcanvas-mobile-menu" class="header-action-btn header-action-btn-menu offcanvas-toggle d-lg-none">
                                     <i class="pe-7s-menu"></i>
@@ -122,8 +130,8 @@
                                 <!-- Single Wedge End -->
                                 <a href="#offcanvas-cart" class="header-action-btn header-action-btn-cart offcanvas-toggle pr-0">
                                     <i class="pe-7s-shopbag"></i>
-                                    <span class="header-action-num">01</span>
-                                    <!-- <span class="cart-amount">€30.00</span> -->
+                                    <span class="header-action-num">{{request.session.cart|length}}</span>
+                                    <!-- <span class="Cart-amount">€30.00</span> -->
                                 </a>
                                 <a href="#offcanvas-mobile-menu" class="header-action-btn header-action-btn-menu offcanvas-toggle d-lg-none">
                                     <i class="pe-7s-menu"></i>
@@ -256,7 +264,7 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li><a href="contact.html">Contact</a></li>
+                                <li><a href="{% url 'contact' %}">Contact</a></li>
                             </ul>
                         </div>
                     </div>
@@ -322,7 +330,10 @@
             </div>
         </div>
         <!-- OffCanvas Wishlist End -->
+
+
         <!-- OffCanvas Cart Start -->
+     {% load cart_tag %}
         <div id="offcanvas-cart" class="offcanvas offcanvas-cart">
             <div class="inner">
                 <div class="head">
@@ -331,36 +342,47 @@
                 </div>
                 <div class="body customScroll">
                     <ul class="minicart-product-list">
+
+                        {% if request.session.cart|length < 1 %}
+                         <!-- Empty Cart area start -->
+                                <div class="empty-cart-area pb-100px pt-100px">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="cart-heading">
+                                                    <h2>Your cart item</h2>
+                                                </div>
+                                                <div class="empty-text-contant text-center">
+                                                    <i class="pe-7s-shopbag"></i>
+                                                    <h3>There are no more items in your cart</h3>
+                                                    <a class="empty-cart-btn" href="{% url 'products' %}">
+                                                        <i class="fa fa-arrow-left"> </i> Continue shopping
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Empty Cart area end -->
+                        {% else %}
+
+                        {% for key,value in request.session.cart.items %}
                         <li>
-                            <a href="single-product.html" class="image"><img src="{%static 'assets/images/product-image/1.webp' %}" alt="Cart product Image"></a>
+                            <a href="single-product.html" class="image"><img src="{{ value.image }}" alt="Cart product Image"></a>
                             <div class="content">
-                                <a href="single-product.html" class="title">Modern Smart Phone</a>
-                                <span class="quantity-price">1 x <span class="amount">$18.86</span></span>
-                                <a href="#" class="remove">×</a>
+                                <a href="single-product.html" class="title">{{ value.name }}</a>
+                                <span class="quantity-price">{{ value.quantity }} x <span class="amount">Rs. {{ value.price }}</span></span>
+                                <a href="{% url 'item_clear' key %}" class="remove">×</a>
                             </div>
                         </li>
-                        <li>
-                            <a href="single-product.html" class="image"><img src="{%static 'assets/images/product-image/2.webp' %}" alt="Cart product Image"></a>
-                            <div class="content">
-                                <a href="single-product.html" class="title">Bluetooth Headphone</a>
-                                <span class="quantity-price">1 x <span class="amount">$43.28</span></span>
-                                <a href="#" class="remove">×</a>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="single-product.html" class="image"><img src="{%static 'assets/images/product-image/3.webp' %}" alt="Cart product Image"></a>
-                            <div class="content">
-                                <a href="single-product.html" class="title">Smart Music Box</a>
-                                <span class="quantity-price">1 x <span class="amount">$37.34</span></span>
-                                <a href="#" class="remove">×</a>
-                            </div>
-                        </li>
+                       {% endfor %}
+                        {% endif%}
                     </ul>
                 </div>
                 <div class="foot">
                     <div class="buttons mt-30px">
-                        <a href="cart.html" class="btn btn-dark btn-hover-primary mb-30px">view cart</a>
-                        <a href="checkout.html" class="btn btn-outline-dark current-btn">checkout</a>
+                        <a href="{% url 'cart_detail' %}" class="btn btn-dark btn-hover-primary mb-30px">view cart</a>
+                        <a href="{% url 'checkout' %}" class="btn btn-outline-dark current-btn">checkout</a>
                     </div>
                 </div>
             </div>
@@ -479,7 +501,7 @@
                                 <li><a href="blog-single-right-sidebar.html">Single Right Sidbar</a>
                             </ul>
                         </li>
-                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="{% url 'contact' %}">Contact Us</a></li>
                     </ul>
                 </div>
                 <!-- OffCanvas Menu End -->
@@ -624,7 +646,8 @@
 
 
     <!-- Modal -->
-    <div class="modal modal-2 fade" id="exampleModal" tabindex="-1" role="dialog">
+ {% for i in product %}
+    <div class="modal modal-2 fade" id="exampleModal-{{  forloop.counter }}" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-body">
@@ -634,40 +657,21 @@
                             <!-- Swiper -->
                             <div class="swiper-container gallery-top">
                                 <div class="swiper-wrapper">
+                                         {% for img in i.images_set.all %}
                                     <div class="swiper-slide">
-                                        <img class="img-responsive m-auto" src="{%static 'assets/images/product-image/zoom-image/1.webp' %}" alt="">
+                                        <img class="img-responsive m-auto" src="/{{ img.image}}" alt="">
                                     </div>
-                                    <div class="swiper-slide">
-                                        <img class="img-responsive m-auto" src="{%static 'assets/images/product-image/zoom-image/2.webp' %}" alt="">
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img class="img-responsive m-auto" src="{%static 'assets/images/product-image/zoom-image/3.webp' %}" alt="">
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img class="img-responsive m-auto" src="{%static 'assets/images/product-image/zoom-image/4.webp' %}" alt="">
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img class="img-responsive m-auto" src="{%static 'assets/images/product-image/zoom-image/5.webp' %}" alt="">
-                                    </div>
+                                          {% endfor %}
+
                                 </div>
                             </div>
                             <div class="swiper-container gallery-thumbs mt-20px slider-nav-style-1 small-nav">
                                 <div class="swiper-wrapper">
+                                    {% for img in i.images_set.all %}
                                     <div class="swiper-slide">
-                                        <img class="img-responsive m-auto" src="{%static 'assets/images/product-image/small-image/1.webp' %}" alt="">
+                                        <img class="img-responsive m-auto" src="/{{ img.image}}" alt="">
                                     </div>
-                                    <div class="swiper-slide">
-                                        <img class="img-responsive m-auto" src="{%static 'assets/images/product-image/small-image/2.webp' %}" alt="">
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img class="img-responsive m-auto" src="{%static 'assets/images/product-image/small-image/3.webp' %}" alt="">
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img class="img-responsive m-auto" src="{%static 'assets/images/product-image/small-image/4.webp' %}" alt="">
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img class="img-responsive m-auto" src="{%static 'assets/images/product-image/small-image/5.webp' %}" alt="">
-                                    </div>
+                                  {% endfor %}
                                 </div>
                                 <!-- Add Arrows -->
                                 <div class="swiper-buttons">
@@ -678,10 +682,10 @@
                         </div>
                         <div class="col-lg-6 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-delay="200">
                             <div class="product-details-content quickview-content">
-                                <h2>Modern Smart Phone</h2>
+                                <h2>{{ i.name }}</h2>
                                 <div class="pricing-meta">
                                     <ul class="d-flex">
-                                        <li class="new-price">$20.90</li>
+                                        <li class="new-price">Rs.{{i.price}}</li>
                                     </ul>
                                 </div>
                                 <div class="pro-details-rating-wrap">
@@ -694,37 +698,28 @@
                                     </div>
                                     <span class="read-review"><a class="reviews" href="#">( 2 Review )</a></span>
                                 </div>
-                                <p class="mt-30px">Lorem ipsum dolor sit amet, consecte adipisicing elit, sed do eiusmll tempor incididunt ut labore et dolore magna aliqua. Ut enim ad mill veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip exet commodo consequat. Duis aute irure dolor</p>
-                                <div class="pro-details-categories-info pro-details-same-style d-flex m-0">
-                                    <span>SKU:</span>
-                                    <ul class="d-flex">
-                                        <li>
-                                            <a href="#">Ch-256xl</a>
-                                        </li>
-                                    </ul>
-                                </div>
+                                <p class="mt-30px">{{i.description | safe}}</p>
+
                                 <div class="pro-details-categories-info pro-details-same-style d-flex m-0">
                                     <span>Categories: </span>
                                     <ul class="d-flex">
                                         <li>
-                                            <a href="#">Smart Device, </a>
+                                            <a href="#">{{i.categories}} </a>
                                         </li>
-                                        <li>
-                                            <a href="#">ETC</a>
-                                        </li>
+
                                     </ul>
                                 </div>
-                                <div class="pro-details-categories-info pro-details-same-style d-flex m-0">
-                                    <span>Tags: </span>
-                                    <ul class="d-flex">
-                                        <li>
-                                            <a href="#">Smart Device, </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Phone</a>
-                                        </li>
-                                    </ul>
-                                </div>
+<!--                                <div class="pro-details-categories-info pro-details-same-style d-flex m-0">-->
+<!--                                    <span>Tags: </span>-->
+<!--                                    <ul class="d-flex">-->
+<!--                                        <li>-->
+<!--                                            <a href="#">Smart Device, </a>-->
+<!--                                        </li>-->
+<!--                                        <li>-->
+<!--                                            <a href="#">Phone</a>-->
+<!--                                        </li>-->
+<!--                                    </ul>-->
+<!--                                </div>-->
                                 <div class="pro-details-quality">
                                     <div class="cart-plus-minus">
                                         <input class="cart-plus-minus-box" type="text" name="qtybutton" value="1" />
@@ -747,9 +742,11 @@
             </div>
         </div>
     </div>
+ {% endfor %}
     <!-- Modal end -->
     <!-- Modal Cart -->
-    <div class="modal customize-class fade" id="exampleModal-Cart" tabindex="-1"   aria-hidden="true">
+ {% for i in product %}
+    <div class="modal customize-class fade" id="exampleModal-Cart-{{forloop.counter}}" tabindex="-1"   aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-body text-center">
@@ -759,14 +756,18 @@
                     </div>
                     <div class="tt-modal-product">
                         <div class="tt-img">
-                            <img src="{%static 'assets/images/product-image/1.webp' %}" alt="Modern Smart Phone">
+                            <img src="/{{ i.image }}" alt="Modern Smart Phone">
                         </div>
-                        <h2 class="tt-title"><a href="#">Modern Smart Phone</a></h2>
+                        <h2 class="tt-title"><a href="#">{{i.name}}</a></h2>
+                        <br>
+                        <a href="{% url 'cart_add' i.id %}" >Add To Cart</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+ {% endfor %}
     <!-- Modal wishlist -->
     <div class="modal customize-class fade" id="exampleModal-Wishlist" tabindex="-1"   aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
