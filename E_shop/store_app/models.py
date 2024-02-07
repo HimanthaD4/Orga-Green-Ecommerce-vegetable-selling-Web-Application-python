@@ -110,7 +110,7 @@ class Order(models.Model):
     postcode = models.IntegerField
     phone = models.IntegerField
     email = models.EmailField()
-    additional_info = models.TextField()
+
     amount = models.CharField(max_length=100)
     payment_id = models.CharField(max_length=300,null=True,blank=True)
     paid = models.BooleanField(default=False,null=True)
