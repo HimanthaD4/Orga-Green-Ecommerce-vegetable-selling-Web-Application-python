@@ -44,7 +44,7 @@
                                 <div class="col-lg-12">
                                     <div class="cart-shiping-update-wrapper">
                                         <div class="cart-shiping-update">
-                                            <a href="#">Place Order</a>
+                                            <a id = "rzp-button1">Place Order</a>
                                         </div>
                                     </div>
                                 </div>
@@ -55,4 +55,43 @@
                 </div>
             </div>
         </div>
+
+
+<form action="{% url 'success' %}" method="post">
+
+
+<script src = "https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+  var options = {
+    "key": "rzp_test_jo79zyHyKt2Pz5",
+      "amount":"50000",
+    // "subscription_id": "sub_00000000000001",
+      "currency":"INR",
+    "name": "Acme Corp.",
+    "description": "Monthly Test Plan",
+    "image": "/your_logo.jpg",
+
+      "order_id":"{{order_id}}",
+
+    "callback_url": "http://127.0.0.1:8000/success/",
+    "prefill": {
+      "name": "your name",
+      "email": "your email",
+      "contact": "+919876543210"
+    },
+    "notes": {
+      "note_key_1": "Tea. Earl Grey. Hot",
+      "note_key_2": "Make it so."
+    },
+    "theme": {
+      "color": "#F37254"
+    }
+  };
+var rzp1 = new Razorpay(options);
+document.getElementById('rzp-button1').onclick = function(e) {
+  rzp1.open();
+  e.preventDefault();
+}
+</script>
+    </form>
 {% endblock %}

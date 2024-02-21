@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="zxx" dir="ltr">
 
-
-<!-- Mirrored from template.hasthemes.com/hmart/hmart/index-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 15 Sep 2021 18:04:02 GMT -->
 <head>
     {% load static %}
     <meta charset="UTF-8">
@@ -33,7 +31,6 @@
 </head>
 
 <body>
-
 
  <div class="main-wrapper">
         <header>
@@ -382,7 +379,11 @@
                 <div class="foot">
                     <div class="buttons mt-30px">
                         <a href="{% url 'cart_detail' %}" class="btn btn-dark btn-hover-primary mb-30px">view cart</a>
-                        <a href="{% url 'checkout' %}" class="btn btn-outline-dark current-btn">checkout</a>
+                        <form method="post" action="{% url 'checkout' %}">
+                            {% csrf_token %}
+                            <input value="{{cart_total_amount}}" name="amount" hidden>
+                            <a class="btn btn-outline-dark current-btn"><button type="submit" class="text-light"> checkout </button></a>
+                        </form>
                     </div>
                 </div>
             </div>
