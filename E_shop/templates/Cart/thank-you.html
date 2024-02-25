@@ -11,7 +11,7 @@
                             <div class="img_cmpted"><img src="{% static 'assets/images/icons/cmpted_logo.png' %}" alt=""></div>
                             <p class="dsc_cmpted">Thank you for ordering in our store.</p>
                             <div class="btn_cmpted">
-                                <a href="#" id="continueShoppingBtn" style="background-color: #4CAF90" class="shop-btn" title="Go To Shop">Continue Shopping </a>
+                                <a href="shop-4-column.html" class="shop-btn" title="Go To Shop">Continue Shopping </a>
                             </div>
                         </div>
                         <div class="main_quickorder text-align-center">
@@ -22,17 +22,6 @@
                 </div>
             </div>
         </div>
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        document.getElementById('continueShoppingBtn').addEventListener('click', function(event) {
-            window.location.href = "{% url 'products' %}";
-            event.preventDefault();
-            clearCart();
-        });
-        function clearCart() {
-            window.location.href = "{% url 'cart_clear2' %}";
-        }
-    });
-</script>
+
 
 {% endblock %}

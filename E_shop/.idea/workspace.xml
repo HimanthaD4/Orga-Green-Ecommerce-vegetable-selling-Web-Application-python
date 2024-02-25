@@ -1,81 +1,192 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="66663f26-91ac-407b-92a3-cb3edd02b94e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/Catalog/brinjal.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/Catalog/cropDisease.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/Catalog/fertilizer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/Catalog/gapIntro.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/Catalog/greenChilli.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/Catalog/mushroom.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/Catalog/papaw.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/Catalog/phMesure.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/Catalog/tomato.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/Main/main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/E_shop/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/E_shop/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+    <list default="true" id="c5238fe7-39ca-404c-8515-87d4f2e8c87b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/.gitattributes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/pythonProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pythonProject.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/yt_Electronics_Shopping_System.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/yt_Electronics_Shopping_System.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/.idea/E_shop.iml" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/.idea/E_shop.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/E_shop/asgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/E_shop/asgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/E_shop/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/E_shop/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/E_shop/styles.py" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/E_shop/styles.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/E_shop/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/E_shop/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/E_shop/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/E_shop/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/E_shop/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/E_shop/wsgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/manage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/static/assets/css/plugins.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/static/assets/css/plugins.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/static/assets/fonts/Pe-icon-7-strokebb1d.svg" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/static/assets/fonts/Pe-icon-7-strokebb1d.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/static/assets/fonts/fontawesome-webfont3e6e.svg" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/static/assets/fonts/fontawesome-webfont3e6e.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/static/assets/images/main2/main.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/static/assets/images/testimonial/1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/static/assets/images/testimonial/2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/static/assets/js/plugins.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/static/assets/js/plugins.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/static/assets/js/plugins/jquery.countdown.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/static/assets/js/plugins/jquery.countdown.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/static/assets/js/vendor.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/static/assets/js/vendor.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/static/assets/js/vendor/jquery-3.6.0.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/static/assets/js/vendor/jquery-3.6.0.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/static/fontawesome/fontawesome-free-6.5.1-desktop/LICENSE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/static/fontawesome/fontawesome-free-6.5.1-desktop/LICENSE.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/static/fontawesome/fontawesome-free-6.5.1-desktop/metadata/categories.yml" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/static/fontawesome/fontawesome-free-6.5.1-desktop/metadata/categories.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/static/fontawesome/fontawesome-free-6.5.1-desktop/metadata/icon-families.json" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/static/fontawesome/fontawesome-free-6.5.1-desktop/metadata/icon-families.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/static/fontawesome/fontawesome-free-6.5.1-desktop/metadata/icon-families.yml" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/static/fontawesome/fontawesome-free-6.5.1-desktop/metadata/icon-families.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/static/fontawesome/fontawesome-free-6.5.1-desktop/metadata/icons.json" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/static/fontawesome/fontawesome-free-6.5.1-desktop/metadata/icons.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/static/fontawesome/fontawesome-free-6.5.1-desktop/metadata/icons.yml" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/static/fontawesome/fontawesome-free-6.5.1-desktop/metadata/icons.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/static/fontawesome/fontawesome-free-6.5.1-desktop/metadata/shims.json" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/static/fontawesome/fontawesome-free-6.5.1-desktop/metadata/shims.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/static/fontawesome/fontawesome-free-6.5.1-desktop/metadata/shims.yml" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/static/fontawesome/fontawesome-free-6.5.1-desktop/metadata/shims.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/static/fontawesome/fontawesome-free-6.5.1-desktop/metadata/sponsors.yml" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/static/fontawesome/fontawesome-free-6.5.1-desktop/metadata/sponsors.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/store_app/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/store_app/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/store_app/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/store_app/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/store_app/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/store_app/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/store_app/migrations/0002_product.py" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/store_app/migrations/0002_product.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/store_app/migrations/0003_images_taag.py" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/store_app/migrations/0003_images_taag.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/store_app/migrations/0004_rename_taag_tag.py" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/store_app/migrations/0004_rename_taag_tag.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/store_app/migrations/0005_alter_product_description_alter_product_information.py" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/store_app/migrations/0005_alter_product_description_alter_product_information.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/store_app/migrations/0006_contact_us.py" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/store_app/migrations/0006_contact_us.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/store_app/migrations/0007_contact_us_email_contact_us_message_contact_us_name_and_more.py" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/store_app/migrations/0007_contact_us_email_contact_us_message_contact_us_name_and_more.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/store_app/migrations/0008_delete_contact_us.py" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/store_app/migrations/0008_delete_contact_us.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/store_app/migrations/0009_contact_us.py" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/store_app/migrations/0009_contact_us.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/store_app/migrations/0010_order_orderitem.py" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/store_app/migrations/0010_order_orderitem.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/store_app/migrations/0011_order_paid_order_payment_id.py" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/store_app/migrations/0011_order_paid_order_payment_id.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/store_app/migrations/0012_alter_order_date.py" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/store_app/migrations/0012_alter_order_date.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/store_app/migrations/0013_remove_order_additional_info.py" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/store_app/migrations/0013_remove_order_additional_info.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/store_app/migrations/0014_orderitem_user_alter_orderitem_order.py" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/store_app/migrations/0014_orderitem_user_alter_orderitem_order.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/store_app/migrations/0015_remove_product_brand_remove_product_color_and_more.py" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/store_app/migrations/0015_remove_product_brand_remove_product_color_and_more.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/store_app/migrations/0016_alter_filter_price_price_alter_product_condition.py" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/store_app/migrations/0016_alter_filter_price_price_alter_product_condition.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/store_app/migrations/0017_alter_product_condition.py" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/store_app/migrations/0017_alter_product_condition.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/store_app/migrations/0018_remove_product_filter_price_delete_filter_price.py" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/store_app/migrations/0018_remove_product_filter_price_delete_filter_price.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/store_app/migrations/0019_delete_tag.py" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/store_app/migrations/0019_delete_tag.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/store_app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/store_app/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/store_app/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/store_app/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/store_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/store_app/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/templates/Cart/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/templates/Cart/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/templates/Cart/cart_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/templates/Cart/cart_details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/templates/Cart/checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/templates/Cart/checkout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/templates/Cart/placeorder.html" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/templates/Cart/placeorder.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/templates/Cart/thank-you.html" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/templates/Cart/thank-you.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/templates/Catalog/brinjal.html" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/templates/Catalog/brinjal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/templates/Catalog/catalogBase.html" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/templates/Catalog/catalogBase.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/templates/Catalog/cropDisease.html" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/templates/Catalog/cropDisease.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/templates/Catalog/fertilizer.html" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/templates/Catalog/fertilizer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/templates/Catalog/greenChilli.html" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/templates/Catalog/greenChilli.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/templates/Catalog/mushroom.html" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/templates/Catalog/mushroom.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/templates/Catalog/papaw.html" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/templates/Catalog/papaw.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/templates/Catalog/phMesure.html" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/templates/Catalog/phMesure.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/templates/Catalog/tomato.html" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/templates/Catalog/tomato.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/templates/Main/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/templates/Main/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/templates/Main/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/templates/Main/contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/templates/Main/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/templates/Main/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/templates/Main/main.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/templates/Main/product.html" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/templates/Main/product.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/templates/Main/product_single.html" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/templates/Main/product_single.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/templates/Main/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/templates/Main/search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/templates/Main/your_order.html" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/templates/Main/your_order.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/templates/Registration/auth.html" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/templates/Registration/auth.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E_shop/templates/Registration/forgotPassword.html" beforeDir="false" afterPath="$PROJECT_DIR$/E_shop/templates/Registration/forgotPassword.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
   </component>
-  <component name="ProjectId" id="2aAgLp6zVnHD9z7dE7bWoNtl6tO" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2ZenfJwN14z1qAIX92RZaeRxTwI" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/himan/Desktop/ORGA GREEN AFTER ADD SECOND FUNCTION FULL"
+    "last_opened_file_path": "C:/Users/himan/Desktop/Orga-Green/E_shop/templates/Main"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\himan\Desktop\Orga-Green\E_shop\templates\Main" />
+      <recent name="C:\Users\himan\Desktop\yt_Electronics_Shopping_System\E_shop\static" />
+    </key>
+  </component>
   <component name="RunManager">
-    <configuration name="E_shop" type="Python.DjangoServer" factoryName="Django server">
-      <module name="E_shop" />
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="yt_Electronics_Shopping_System" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="launchJavascriptDebuger" value="false" />
-      <option name="port" value="8000" />
-      <option name="host" value="" />
-      <option name="additionalOptions" value="" />
-      <option name="browserUrl" value="" />
-      <option name="runTestServer" value="false" />
-      <option name="runNoReload" value="false" />
-      <option name="useCustomRunCommand" value="false" />
-      <option name="customRunCommand" value="" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="66663f26-91ac-407b-92a3-cb3edd02b94e" name="Changes" comment="" />
-      <created>1703766743370</created>
+      <changelist id="c5238fe7-39ca-404c-8515-87d4f2e8c87b" name="Changes" comment="" />
+      <created>1702791515038</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1703766743370</updated>
-      <workItem from="1703766744536" duration="37000" />
+      <updated>1702791515038</updated>
+      <workItem from="1702791517873" duration="17038000" />
+      <workItem from="1702838376166" duration="8875000" />
+      <workItem from="1702850647285" duration="2146000" />
+      <workItem from="1702886598506" duration="66193000" />
+      <workItem from="1703067745430" duration="15153000" />
+      <workItem from="1703084078471" duration="687000" />
+      <workItem from="1703116991433" duration="12805000" />
+      <workItem from="1708551434041" duration="2385000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

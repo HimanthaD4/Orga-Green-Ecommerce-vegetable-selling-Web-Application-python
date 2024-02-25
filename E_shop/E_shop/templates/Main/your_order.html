@@ -2,6 +2,7 @@
 
 {% block content %}
 {% load static %}
+{% load cart_tag %}
 <!-- Cart Area Start -->
         <div class="cart-main-area pt-100px pb-100px">
             <div class="container">
@@ -18,7 +19,8 @@
                                             <th>Until Price</th>
                                             <th>Qty</th>
                                             <th>Subtotal</th>
-                                            <th>Action</th>
+
+
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -35,9 +37,9 @@
                                                 </div>
                                             </td>
                                             <td class="product-subtotal">Rs.{{i.total}}</td>
-                                            <td class="product-remove">
 
-                                                <a href="#"><i class="fa fa-times"></i></a>
+
+
                                             </td>
                                         </tr>
 
@@ -45,8 +47,6 @@
                                     </tbody>
                                 </table>
                             </div>
-
-
                     </div>
                 </div>
             </div>
