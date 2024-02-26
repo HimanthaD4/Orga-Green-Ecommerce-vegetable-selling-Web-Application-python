@@ -110,7 +110,7 @@ class Order(models.Model):
     postcode = models.IntegerField
     phone = models.IntegerField
     email = models.EmailField()
-
+    additional_info = models.TextField()
     amount = models.CharField(max_length=100)
     payment_id = models.CharField(max_length=300,null=True,blank=True)
     paid = models.BooleanField(default=False,null=True)
@@ -120,8 +120,7 @@ class Order(models.Model):
         return self.user.username
 
 class OrderItem(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE,null=True)
-    order = models.ForeignKey(Order,on_delete=models.CASCADE,null=True)
+    order = models.ForeignKey(Order,on_delete=models.CASCADE)
     product = models.CharField(max_length=200)
     image = models.ImageField(upload_to="Product_Images/Order_Img")
     quantity = models.CharField(max_length=20)
