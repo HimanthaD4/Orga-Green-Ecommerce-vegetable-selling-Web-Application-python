@@ -14,7 +14,7 @@ import razorpay
 client = razorpay.Client(auth=(settings.RAZORPAY_KEY_ID, settings.RAZORPAY_KEY_SECRECT))
 
 # Initialize logger
-# logger = logging.getLogger(__name__)
+logger = logging.getLogger(__name__)
 
 # Base view
 def BASE(request):
@@ -157,7 +157,7 @@ def Check_out(request):
 
         payment = client.order.create({
             "amount": amount,
-            "currency": "INR",
+            "currency": "LKR",
             "payment_capture": "1"
         })
 
@@ -244,7 +244,3 @@ def Your_Order(request):
     context = {'order': order}
 
     return render(request, 'Main/your_order.html', context)
-
-
-def ABOUT(request):
-    return render(request, 'Cart/about.html')

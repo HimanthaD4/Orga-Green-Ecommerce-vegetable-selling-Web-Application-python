@@ -28,7 +28,6 @@ urlpatterns = [
     path('cart/checkout/',views.Check_out,name='checkout'),
     path('cart/checkout/placeorder',views.PLACE_ORDER,name='place_order'),
     path('success/',views.SUCCESS,name='success'),
-    path('about/',views.ABOUT,name='about'),
 
     path('Your_Order/',views.Your_Order,name='your_order')
 

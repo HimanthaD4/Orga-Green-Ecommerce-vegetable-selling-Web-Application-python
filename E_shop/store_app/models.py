@@ -30,7 +30,7 @@ class Filter_price(models.Model):
 
 
 class Product(models.Model):
-    CONDITION = (('GAP Certified','GAP Certified'),('No','No'))
+    CONDITION = (('GPA Certified','GPA Certified'),('No','No'))
     STOCK = ('IN STOCK','IN STOCK'),('OUT OF STOCK','OUT OF STOCK')
     STATUS = ('Publish','Publish'),('Draft','Draft')
 
