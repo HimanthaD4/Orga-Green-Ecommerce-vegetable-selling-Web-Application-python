@@ -1,59 +1,61 @@
-# Import necessary modules
-import logging
-from django.shortcuts import render, redirect
-from store_app.models import Product, Categories, Filter_price, Contact_us, Order, OrderItem
+from django.shortcuts import render,redirect
+from store_app.models import Product,Categories,Filter_price,Contact_us,Order,OrderItem
 from django.conf import settings
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
 from cart.cart import Cart
 from django.views.decorators.csrf import csrf_exempt
 import razorpay
 
-# Initialize Razorpay client
-client = razorpay.Client(auth=(settings.RAZORPAY_KEY_ID, settings.RAZORPAY_KEY_SECRECT))
+client = razorpay.Client(auth=(settings.RAZORPAY_KEY_ID,settings.RAZORPAY_KEY_SECRECT))
 
-# Initialize logger
-logger = logging.getLogger(__name__)
-
-# Base view
 def BASE(request):
-    return render(request, 'Main/base.html')
+    return render(request,'Main/base.html')
 
-# Home view
+
 def HOME(request):
-    product = Product.objects.filter(status='Publish')
-    context = {'product': product}
-    return render(request, 'Main/index.html', context)
+    product = Product.objects.filter(status = 'Publish')
+    context = {
+        'product': product,
+    }
+    return render(request,'Main/index.html',context)
 
-# Product view
 def PRODUCT(request):
     product = Product.objects.filter(status='Publish')
     categories = Categories.objects.all()
     filter_price = Filter_price.objects.all()
     CATID = request.GET.get('categories')
     if CATID:
-        product = Product.objects.filter(categories=CATID)
+        product = Product.objects.filter(categories = CATID)
     else:
         product = Product.objects.filter(status='Publish')
 
-    context = {'product': product, 'categories': categories, 'filter_price': filter_price}
-    return render(request, 'Main/product.html', context)
+    context = {
+        'product': product,
+        'categories':categories,
+        'filter_price':filter_price,
+    }
+    return render(request,'Main/product.html',context)
 
-# Search view
+
 def SEARCH(request):
     query = request.GET.get('query')
-    product = Product.objects.filter(name__icontains=query)
-    context = {'product': product}
-    return render(request, 'Main/search.html', context)
+    product = Product.objects.filter(name__icontains = query)
+    context = {
+        'product': product
+    }
+    return render(request, 'Main/search.html',context)
 
-# Product detail view
-def PRODUCT_DETAIL_PAGE(request, id):
-    prod = Product.objects.filter(id=id).first()
-    context = {'prod': prod}
-    return render(request, 'Main/product_single.html', context)
 
-# Contact page view
+def PRODUCT_DETAIL_PAGE(request,id):
+    prod = Product.objects.filter(id = id).first()
+    context = {
+        'prod': prod
+    }
+    return render (request,'Main/product_single.html',context)
+
+
 def Contact_Page(request):
     if request.method == 'POST':
         name = request.POST.get('name')
@@ -61,12 +63,17 @@ def Contact_Page(request):
         subject = request.POST.get('subject')
         message = request.POST.get('message')
 
-        contact = Contact_us(name=name, email=email, subject=subject, message=message)
+        contact = Contact_us(
+            name=name,
+            email=email,
+            subject=subject,
+            message=message,
+        )
         contact.save()
         return redirect('home')
-    return render(request, 'Main/contact.html')
+    return render(request,'Main/contact.html')
 
-# Handle user registration
+
 def HandleRegister(request):
     if request.method == "POST":
         username = request.POST.get('username')
@@ -76,35 +83,33 @@ def HandleRegister(request):
         pass1 = request.POST.get('pass1')
         pass2 = request.POST.get('pass2')
 
-        customer = User.objects.create_user(username, email, pass1)
+        customer = User.objects.create_user(username,email,pass1)
         customer.first_name = first_name
         customer.last_name = last_name
         customer.save()
         return redirect('register')
 
-    return render(request, 'Registration/auth.html')
+    return render(request,'Registration/auth.html')
 
-# Handle user login
 def HandleLogin(request):
     if request.method == "POST":
         username = request.POST.get('username')
         password = request.POST.get('password')
 
-        user = authenticate(username=username, password=password)
+        user = authenticate(username = username,password = password)
         if user is not None:
-            login(request, user)
+            login(request,user)
             return redirect('home')
         else:
             return redirect('login')
 
     return render(request, 'Registration/auth.html')
 
-# Handle user logout
+
 def HandleLogout(request):
     logout(request)
     return redirect('home')
 
-# Add product to cart
 @login_required(login_url="/login/")
 def cart_add(request, id):
     cart = Cart(request)
@@ -112,7 +117,7 @@ def cart_add(request, id):
     cart.add(product=product)
     return redirect("home")
 
-# Remove item from cart
+
 @login_required(login_url="/login/")
 def item_clear(request, id):
     cart = Cart(request)
@@ -120,7 +125,7 @@ def item_clear(request, id):
     cart.remove(product)
     return redirect("cart_detail")
 
-# Increment quantity in cart
+
 @login_required(login_url="/login/")
 def item_increment(request, id):
     cart = Cart(request)
@@ -128,7 +133,7 @@ def item_increment(request, id):
     cart.add(product=product)
     return redirect("cart_detail")
 
-# Decrement quantity in cart
+
 @login_required(login_url="/login/")
 def item_decrement(request, id):
     cart = Cart(request)
@@ -136,46 +141,43 @@ def item_decrement(request, id):
     cart.decrement(product=product)
     return redirect("cart_detail")
 
-# Clear entire cart
+
 @login_required(login_url="/login/")
 def cart_clear(request):
     cart = Cart(request)
     cart.clear()
     return redirect("cart_detail")
 
-# Display cart details
+
 @login_required(login_url="/login/")
 def cart_detail(request):
     return render(request, 'Cart/cart_details.html')
 
-# Checkout process
+
 def Check_out(request):
-    try:
-        amount_str = request.POST.get('amount')
-        amount_float = float(amount_str)
-        amount = int(amount_float)
+    amount_str = request.POST.get('amount')
+    amount_float = float(amount_str)
+    amount = int(amount_float)
 
-        payment = client.order.create({
-            "amount": amount,
-            "currency": "LKR",
-            "payment_capture": "1"
-        })
+    payment = client.order.create({
+        "amount": amount,
+        "currency": "INR",
+        "payment_capture" : "1"
+    })
 
-        order_id = payment['id']
-        context = {'order_id': order_id, 'payment': payment}
-        return render(request, 'Cart/checkout.html', context)
+    order_id = payment['id']
+    context = {
+        'order_id': order_id,
+        'payment': payment,
+    }
+    return render(request,'Cart/checkout.html',context)
 
-    except Exception as e:
-        logger.error(f"Error during checkout: {str(e)}")
-        # You might want to redirect the user to an error page or display an error message
-        return render(request, 'Cart/checkout_error.html')
-
-# Place order
 def PLACE_ORDER(request):
     if request.method == 'POST':
         uid = request.session.get('_auth_user_id')
         user = User.objects.get(id=uid)
         cart = request.session.get('cart')
+        print(cart)
         firstname = request.POST.get('firstname')
         lastname = request.POST.get('lastname')
         country = request.POST.get('country')
@@ -187,13 +189,16 @@ def PLACE_ORDER(request):
         email = request.POST.get('email')
         amount = request.POST.get('amount')
 
+
         order_id = request.POST.get('order_id')
         payment = request.POST.get('payment')
 
-        context = {'order_id': order_id}
+        context = {
+            'order_id':order_id,
+        }
 
         order = Order(user=user, firstname=firstname, lastname=lastname, country=country, address=address,
-                      city=city, state=state, email=email, payment_id=order_id, amount=amount)
+                      city=city, state=state, email=email, payment_id=order_id, amount = amount)
 
         order.postcode = postcode
         order.phone = phone
@@ -207,19 +212,18 @@ def PLACE_ORDER(request):
             total = a * b
 
             item = OrderItem(
-                user=user,
-                order=order,
-                product=cart[i]['name'],
-                image=cart[i]['image'],
-                quantity=cart[i]['quantity'],
-                price=cart[i]['price'],
-                total=total
+                user = user,
+                order = order,
+                product = cart[i]['name'],
+                image = cart[i]['image'],
+                quantity = cart[i]['quantity'],
+                price = cart[i]['price'],
+                total = total
             )
             item.save()
 
-    return render(request, 'Cart/placeorder.html', context)
+    return render(request, 'Cart/placeorder.html',context)
 
-# Handle successful payment
 @csrf_exempt
 def SUCCESS(request):
     if request.method == "POST":
@@ -230,17 +234,19 @@ def SUCCESS(request):
                 order_id = val
                 break
 
-        user = Order.objects.filter(payment_id=order_id).first()
+        user = Order.objects.filter(payment_id = order_id).first()
         user.paid = True
         user.save()
-    return render(request, 'Cart/thank-you.html')
+    return render(request,'Cart/thank-you.html')
 
-# View user's order
+
 def Your_Order(request):
     uid = request.session.get('_auth_user_id')
     user = User.objects.get(id=uid)
 
-    order = OrderItem.objects.filter(user=user)
-    context = {'order': order}
+    order = OrderItem.objects.filter(user = user)
+    context = {
+        'order':order,
+    }
 
-    return render(request, 'Main/your_order.html', context)
+    return render(request,'Main/your_order.html',context)
