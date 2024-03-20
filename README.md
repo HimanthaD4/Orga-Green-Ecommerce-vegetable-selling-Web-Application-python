@@ -136,9 +136,10 @@
 <h2>Technologies Used</h2>
 <p>
   - Django<br>
+  - Python<br>
   - JavaScript<br>
   - Razorpay<br>
-  - XHTML (Note: HTML is not explicitly installed as it's a markup language)<br>
+  - html (Note: HTML is not explicitly installed as it's a markup language)<br>
 </p>
 
 </body>
