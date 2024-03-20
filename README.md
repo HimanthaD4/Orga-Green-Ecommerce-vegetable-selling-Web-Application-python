@@ -10,7 +10,7 @@
 <h1 align="center">Orga Green - E-commerce Web Application</h1>
 
 <div style="text-align: center;">
-    <img src="https://github.com/Jayakodi67/Orga-Green/blob/main/E_shop/static/assets/images/logoMain/logo.png?raw=true" alt="Orga Green Logo" style="display: inline-block; width: 200px;">
+    <img src="https://github.com/HimanthaD4/Orga-Green-Ecommerce-vegetable-selling-Web-Application-python/blob/main/E_shop/static/assets/images/logo/logo.png" alt="Orga Green Logo" style="display: inline-block; width: 200px;">
 </div>
 
 <h2>Overview</h2>
@@ -32,19 +32,19 @@
 
 <h3>Home Page</h3>
 <img src="https://github.com/HimanthaD4/Orga-Green-Ecommerce-vegetable-selling-Web-Application-python/blob/main/E_shop/static/assets/images/screenshots/home1.png">
-<img src="https://github.com/Jayakodi67/Orga-Green/blob/main/E_shop/static/assets/images/screenshots/home.png?raw=true">
+<img src=https://github.com/HimanthaD4/Orga-Green-Ecommerce-vegetable-selling-Web-Application-python/blob/main/E_shop/static/assets/images/screenshots/home.png">
 
 <h3>Product Page</h3>
-<img src="https://github.com/Jayakodi67/Orga-Green/blob/main/E_shop/static/assets/images/screenshots/product.png?raw=true">
+<img src="https://github.com/HimanthaD4/Orga-Green-Ecommerce-vegetable-selling-Web-Application-python/blob/main/E_shop/static/assets/images/screenshots/product.png">
 
 <h3>Cart Page</h3>
-<img src="https://github.com/Jayakodi67/Orga-Green/blob/main/E_shop/static/assets/images/screenshots/cart.png?raw=true">
+<img src="https://github.com/HimanthaD4/Orga-Green-Ecommerce-vegetable-selling-Web-Application-python/blob/main/E_shop/static/assets/images/screenshots/cart.png">
 
 <h3>Product List</h3>
-<img src="https://github.com/Jayakodi67/Orga-Green/blob/main/E_shop/static/assets/images/screenshots/productList.png?raw=true">
+<img src="https://github.com/HimanthaD4/Orga-Green-Ecommerce-vegetable-selling-Web-Application-python/blob/main/E_shop/static/assets/images/screenshots/productList.png">
 
 <h3>Single Product</h3>
-<img src="https://github.com/HimanthaD4/Orga-Green-Ecommerce-vegetable-selling-Web-Application-python/blob/main/E_shop/static/assets/images/screenshots/singleProduct.png">
+<img src="https://github.com/HimanthaD4/Orga-Green-Ecommerce-vegetable-selling-Web-Application-python/blob/main/E_shop/static/assets/images/screenshots/Screenshot%202024-03-21%20024904.png">
 
 <h3>Admin Panel</h3>
 <img src="https://github.com/HimanthaD4/Orga-Green-Ecommerce-vegetable-selling-Web-Application-python/blob/main/E_shop/static/assets/images/screenshots/admin.png">
