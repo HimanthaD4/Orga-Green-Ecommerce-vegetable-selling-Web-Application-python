@@ -7,10 +7,10 @@
 </head>
 <body>
 
-<h1 align="center">Healthy Goods - E-commerce Web Application</h1>
+<h1 align="center">Orga Green - E-commerce Web Application</h1>
 
 <div style="text-align: center;">
-    <img src="https://github.com/Jayakodi67/Orga-Green/blob/main/E_shop/static/assets/images/logo2/logo.png?raw=true" alt="Orga Green Logo" style="display: inline-block; width: 200px;">
+    <img src="https://github.com/Jayakodi67/Orga-Green/blob/main/E_shop/static/assets/images/logoMain/logo.png?raw=true" alt="Orga Green Logo" style="display: inline-block; width: 200px;">
 </div>
 
 <h2>Overview</h2>
@@ -31,6 +31,7 @@
 <h2>Screenshots</h2>
 
 <h3>Home Page</h3>
+<img src="https://github.com/HimanthaD4/Orga-Green-Ecommerce-vegetable-selling-Web-Application-python/blob/main/E_shop/static/assets/images/screenshots/home1.png">
 <img src="https://github.com/Jayakodi67/Orga-Green/blob/main/E_shop/static/assets/images/screenshots/home.png?raw=true">
 
 <h3>Product Page</h3>
@@ -39,16 +40,34 @@
 <h3>Cart Page</h3>
 <img src="https://github.com/Jayakodi67/Orga-Green/blob/main/E_shop/static/assets/images/screenshots/cart.png?raw=true">
 
+<h3>Product List</h3>
+<img src="https://github.com/Jayakodi67/Orga-Green/blob/main/E_shop/static/assets/images/screenshots/productList.png?raw=true">
+
+<h3>Single Product</h3>
+<img src="https://github.com/HimanthaD4/Orga-Green-Ecommerce-vegetable-selling-Web-Application-python/blob/main/E_shop/static/assets/images/screenshots/singleProduct.png">
+
+<h3>Admin Panel</h3>
+<img src="https://github.com/HimanthaD4/Orga-Green-Ecommerce-vegetable-selling-Web-Application-python/blob/main/E_shop/static/assets/images/screenshots/admin.png">
+
+<h3>Orders Management - Admin Panel</h3>
+<img src="https://github.com/HimanthaD4/Orga-Green-Ecommerce-vegetable-selling-Web-Application-python/blob/main/E_shop/static/assets/images/screenshots/admin.png">
+
+<h3>Orders Management - Admin Panel</h3>
+<img src="https://github.com/HimanthaD4/Orga-Green-Ecommerce-vegetable-selling-Web-Application-python/blob/main/E_shop/static/assets/images/screenshots/adminProduct.png">
+
+
+<h3>Payments Methods</h3>
+<img src="https://github.com/HimanthaD4/Orga-Green-Ecommerce-vegetable-selling-Web-Application-python/blob/main/E_shop/static/assets/images/screenshots/payment.png">
+
 
 <h3>Contact Page</h3>
-<img src="https://github.com/Jayakodi67/Orga-Green/blob/main/E_shop/static/assets/images/screenshots/contact.png?raw=true">
+<img src="https://github.com/HimanthaD4/Orga-Green-Ecommerce-vegetable-selling-Web-Application-python/blob/main/E_shop/static/assets/images/screenshots/contact.png">
 
 <h3>About Page</h3>
-<img src="https://github.com/Jayakodi67/Orga-Green/blob/main/E_shop/static/assets/images/screenshots/about.png?raw=true">
+<img src="https://github.com/HimanthaD4/Orga-Green-Ecommerce-vegetable-selling-Web-Application-python/blob/main/E_shop/static/assets/images/screenshots/about.png">
 
 <h3>Billing Details Page</h3>
-<img src="https://github.com/Jayakodi67/Orga-Green/blob/main/E_shop/static/assets/images/screenshots/bill.png?raw=true">
-
+<img src="https://github.com/HimanthaD4/Orga-Green-Ecommerce-vegetable-selling-Web-Application-python/blob/main/E_shop/static/assets/images/screenshots/bill.png">
 
 <h2>Features</h2>
 <ul>
@@ -97,6 +116,11 @@
   <code> pip install xhtml2pdf </code>
 </pre>
 
+<h3>Create Admin(Super User)</h3>
+<pre>
+  <code> python manage.py createsuperuser </code>
+</pre>
+
 <pre>
   <code> python manage.py makemigrations </code>
 </pre>
@@ -105,6 +129,8 @@
 <h3>Running the Application</h3>
 <pre><code>python manage.py runserver</code></pre>
 <p>Visit <a href="http://localhost:8000">http://localhost:8000</a> in your web browser to access the application.</p>
+
+<p>Visit <a href="http://localhost:8000/admin/">http://localhost:8000</a> in your web browser to access the application.</p>
 
 
 <h2>Technologies Used</h2>
