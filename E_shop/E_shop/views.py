@@ -15,7 +15,6 @@ from reportlab.platypus import SimpleDocTemplate, Paragraph, Table, TableStyle, 
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from datetime import datetime
 from django.http import HttpResponse
-from django.http import HttpResponse
 from reportlab.pdfgen import canvas
 from django.contrib import messages
 
@@ -211,11 +210,11 @@ def cart_detail(request):
 def Check_out(request):
     amount_str = request.POST.get('amount')
     amount_float = float(amount_str)
-    amount = int(amount_float)
+    amount = int(amount_float*100)
 
     payment = client.order.create({
         "amount": amount,
-        "currency": "INR",
+        "currency": "LKR",
         "payment_capture" : "1"
     })
 
@@ -273,7 +272,7 @@ def PLACE_ORDER(request):
                 {
                     'name': cart_item['name'],
                     'quantity': cart_item['quantity'],
-                    'price': cart_item['price'],  # Include product price in the details
+                    'price': cart_item['price'],  
                 }
                 for cart_item in cart.values()
             ],
@@ -403,17 +402,17 @@ def generate_pdf(request):
 
     elements = []
 
-    brand_name = "Orga Green"
+    brand_name = "healthyGoods"
     slogan = "Fresh. Healthy. Delivered with care."
     brand_header_style = ParagraphStyle('BrandHeader', parent=styles['Title'], fontSize=18, textColor=colors.green)
     brand_paragraph = Paragraph(f"<b>{brand_name}</b><br/>{slogan}", brand_header_style)
     elements.append(brand_paragraph)
 
     company_paragraph = (
-        "At Orga Green, we are committed to providing you with the freshest and highest quality fruits and vegetables. "
+        "At HealthyGoods, we are committed to providing you with the freshest and highest quality fruits and vegetables. "
         "Our mission is to promote a healthy lifestyle by delivering farm-fresh produce directly to your doorstep. "
         "With a focus on quality and customer satisfaction, we take pride in offering a wide range of organic and "
-        "locally sourced products. Thank you for choosing Orga Green for your healthy living journey."
+        "locally sourced products. Thank you for choosing healthyGoods for your healthy living journey."
     )
     elements.append(Paragraph(company_paragraph, styles['Normal']))
 

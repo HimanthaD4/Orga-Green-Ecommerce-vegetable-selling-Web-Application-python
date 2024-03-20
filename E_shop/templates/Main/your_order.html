@@ -1,5 +1,4 @@
 {% extends 'Main/base.html' %}
-
 {% block content %}
 {% load static %}
 {% load cart_tag %}
@@ -19,8 +18,6 @@
                                             <th>Until Price</th>
                                             <th>Qty</th>
                                             <th>Subtotal</th>
-
-
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -37,12 +34,8 @@
                                                 </div>
                                             </td>
                                             <td class="product-subtotal">Rs.{{i.total}}</td>
-
-
-
                                             </td>
                                         </tr>
-
                                        {% endfor %}
                                     </tbody>
                                 </table>

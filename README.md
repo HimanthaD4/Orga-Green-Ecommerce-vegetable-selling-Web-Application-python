@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<h1 align="center">Orga Green - E-commerce Web Application</h1>
+<h1 align="center">Healthy Goods - E-commerce Web Application</h1>
 
 <div style="text-align: center;">
     <img src="https://github.com/Jayakodi67/Orga-Green/blob/main/E_shop/static/assets/images/logo2/logo.png?raw=true" alt="Orga Green Logo" style="display: inline-block; width: 200px;">
@@ -15,7 +15,7 @@
 
 <h2>Overview</h2>
 <p>
-  Orga Green is a Django-based e-commerce web application designed to sell organic fruits, vegetables, fertilizers, seeds, and crops.
+  Healthy Goods is a Django-based e-commerce web application designed to sell organic fruits, vegetables, fertilizers, seeds, and crops.
   Users can browse through the product catalog, add items to their cart, and securely checkout using Razorpay payment gateway.
 </p>
 
@@ -87,10 +87,6 @@
   <code>pip install shopping-cart-package</code>
 </pre>
 
-<h3>Running the Application</h3>
-<pre><code>python manage.py runserver</code></pre>
-<p>Visit <a href="http://localhost:8000">http://localhost:8000</a> in your web browser to access the application.</p>
-
 <h3>Install Razorpay</h3>
 <pre>
   <code>pip install razorpay</code>
@@ -101,6 +97,14 @@
   <code> pip install xhtml2pdf </code>
 </pre>
 
+<pre>
+  <code> python manage.py makemigrations </code>
+</pre>
+
+
+<h3>Running the Application</h3>
+<pre><code>python manage.py runserver</code></pre>
+<p>Visit <a href="http://localhost:8000">http://localhost:8000</a> in your web browser to access the application.</p>
 
 
 <h2>Technologies Used</h2>

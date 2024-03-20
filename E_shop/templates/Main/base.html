@@ -6,13 +6,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orga Green</title>
+    <title>Healthy Goods</title>
     <meta name="robots" content="index, follow" />
-    <meta name="description" content="Orga Green">
+    <meta name="description" content="Healthy Goods">
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico" />
-    <!-- CSS
-    ============================================ -->
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/images/logo2/ico.png' %}" />
+
     <link rel="stylesheet" href="{%static 'assets/css/bootstrap.min.css' %}" />
     <link rel="stylesheet" href="{%static 'assets/css/font.awesome.css' %}" />
     <link rel="stylesheet" href="{%static 'assets/css/pe-icon-7-stroke.css' %}" />
@@ -20,9 +19,7 @@
     <link rel="stylesheet" href="{%static 'assets/css/swiper-bundle.min.css' %}">
     <link rel="stylesheet" href="{%static 'assets/css/venobox.css' %}">
     <link rel="stylesheet" href="{%static 'assets/css/jquery-ui.min.css' %}">
-
     <link rel="stylesheet" href="{% static 'fontawesome/css/all.min.css' %}">
-
     <link rel="stylesheet" href="{%static 'assets/css/plugins.min.css' %}">
     <link rel="stylesheet" href="{%static 'assets/css/style.min.css' %}">
 
@@ -31,15 +28,19 @@
     .sticky-nav.scrolled {
         background-color: #4CAF90;
     }
+
+    .header-logo img {
+            max-height: 140px;
+            width: auto;
+            margin: 0 auto; 
+            display: block; 
+        }
+        
 </style>
-
 </head>
-
 <body>
-
              <div class="main-wrapper">
                     <header>
-               
                  <div class="header-top">
                 <div class="container">
                     <div class="row justify-content-between align-items-center">
@@ -51,13 +52,13 @@
                         <div class="col d-none d-lg-block">
                             <div class="top-nav">
                                  <ul>
-                                    <li><a href="tel:0123456789" style="color: #ffffff; text-decoration: none;" onmouseover="this.style.color='#4CAF90'" onmouseout="this.style.color='#ffffff'"><span>&#9742;</span>&nbsp; +0123456789</a></li>
-                                    <li><a href="mailto:demo@example.com" style="color: #ffffff; text-decoration: none;" onmouseover="this.style.color='#4CAF90'" onmouseout="this.style.color='#ffffff'"><span>&#9993;</span>&nbsp; orgaGreen@gmail.com</a></li>
+                                    <li><a href="tel:0123456789" style="color: #ffffff; text-decoration: none;" onmouseover="this.style.color='#4CAF90'" onmouseout="this.style.color='#ffffff'"><span>&#9742;</span>&nbsp; +076 426 4976</a></li>
+                                    <li><a href="mailto:demo@example.com" style="color: #ffffff; text-decoration: none;" onmouseover="this.style.color='#4CAF90'" onmouseout="this.style.color='#ffffff'"><span>&#9993;</span>&nbsp; healthygoods4@gmail.com</a></li>
 
                                     {% if user.is_authenticated %}
-                                    <li><a href="{% url 'logout' %}" style="color: #ffffff; text-decoration: none;" onmouseover="this.style.color='#4CAF90'" onmouseout="this.style.color='#ffffff'"><span >&#128275;</span>&nbsp; Logout</a></li> <!-- Unlocked Lock Icon -->
+                                    <li><a href="{% url 'logout' %}" style="color: #ffffff; text-decoration: none;" onmouseover="this.style.color='#4CAF90'" onmouseout="this.style.color='#ffffff'"><span >&#128275;</span>&nbsp; Logout</a></li> 
                                     {% else %}
-                                    <li><a href="{% url 'login' %}" style="color: #ffffff; text-decoration: none;" onmouseover="this.style.color='#4CAF90'" onmouseout="this.style.color='#ffffff'"><span>&#128274;</span>&nbsp; Login</a></li> <!-- Locked Lock Icon -->
+                                    <li><a href="{% url 'login' %}" style="color: #ffffff; text-decoration: none;" onmouseover="this.style.color='#4CAF90'" onmouseout="this.style.color='#ffffff'"><span>&#128274;</span>&nbsp; Login</a></li> 
                                     {% endif %}
                                 </ul>
                             </div>
@@ -65,14 +66,13 @@
                     </div>
                 </div>
             </div>
-
             <div class="header-bottom d-none d-lg-block" style="background-color: #DFF4F2;">
                 <div class="container">
                     <div class="row justify-content-between align-items-center" style="border-bottom: 2px solid #B0E9E3; padding-bottom: 10px;">
                         <div class="col-lg-3 col">
                             <div class="header-logo">
                                 <a href="{% url 'home' %}">
-                                    <img src="{% static 'assets/images/logo2/logo.png' %}" alt="Site Logo" style="max-height: 80px; max-width: 100%;" />
+                                    <img src="{% static 'assets/images/logo2/logo5.png' %}" alt="Site Logo" style="max-height: 110px; max-width: 100%;" />
                                 </a>
                             </div>
                         </div>
@@ -103,7 +103,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="header-nav-area d-none d-lg-block sticky-nav" style="background-color: #4CAF90">
                 <div class="container">
                     <div class="header-nav">
@@ -119,11 +118,7 @@
                             </div>
                         </div>
               </header>
-
      {% load cart_tag %}
-
-
-
      <div id="offcanvas-cart" class="offcanvas offcanvas-cart">
             <div class="inner">
                 <div class="head">
@@ -132,7 +127,6 @@
                 </div>
                 <div class="body customScroll">
                     <ul class="minicart-product-list">
-
                         {% if request.session.cart|length < 1 %}
                          <!-- Empty Cart area start -->
                                 <div class="empty-cart-area pb-100px pt-100px">
@@ -153,9 +147,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- Empty Cart area end -->
                         {% else %}
-
                         {% for key,value in request.session.cart.items %}
                         <li>
                             <a href="single-product.html" class="image"><img src="{{ value.image }}" alt="Cart product Image"></a>
@@ -181,10 +173,6 @@
                 </div>
             </div>
         </div>
-
-
-
-
 {% block content %} {% endblock %}
 <!--footer area start-->
  <div class="footer-area" style="background-color: #DFF4F2;">
@@ -197,39 +185,41 @@
                             <div class="single-wedge">
                                 <div class="footer-logo">
                                     <a href="index.html">
-                                        <img src="{% static 'assets/images/logo2/logo.png' %}" alt="" style="max-height: 130px; max-width: 100%;" />
+                                        <img src="{% static 'assets/images/logo2/logo5.png' %}" alt="" style="max-height: 130px; max-width: 100%;" />
                                     </a>
                                 </div>
                                 <p class="about-text"> Explore the Freshness: From Garden to Your Table
                                 </p>
+
+
                                 <ul class="link-follow">
                                     <li>
 
                                     <li>
-                                        <a class="m-0" title="Facebook" target="_blank" rel="noopener noreferrer" href="#" style="background-color: #4CAF90;">📘</a>
+                                        <a class="m-0" title="Facebook" target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/profile.php?id=61557473001798&mibextid=ZbWKwL" style="background-color: #ffffff;"> 
+                                            <img src="{% static 'assets/images/social/fb.png' %}" alt="" style="max-height: 130px; max-width: 120%; " /></a>
                                     </li>
 
                                     <li>
-                                        <a class="m-0" title="Instagram" target="_blank" rel="noopener noreferrer" href="#" style="background-color: #4CAF90;">📸</a>
+                                        <a class="m-0" title="Instagram" target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/healthy_goods12?igsh=bGRoOWxqYnp1Z3Jl" style="background-color: #ffffff;">
+                                            <img src="{% static 'assets/images/social/insta.png' %}" alt="" style="max-height: 130px; max-width: 100%;" /></a></a>
                                     </li>
 
                                     <li>
-                                        <a class="m-0" title="Skype" target="_blank" rel="noopener noreferrer" href="#" style="background-color: #4CAF90;">💬</a>
+                                        <a class="m-0" title="Skype" target="_blank" rel="noopener noreferrer" href="https://vt.tiktok.com/ZSFPRaAtf/" style="background-color: #ffffff;">
+                                            <img src="{% static 'assets/images/social/tiktok.png' %}" alt="" style="max-height: 130px; max-width: 70%;" /></a></a>
+                                    </li>
+                                    <li>
+                                        <a class="m-0" title="Skype" target="_blank" rel="noopener noreferrer" href="https://www.gmail.com" style="background-color: #ffffff;">
+                                            <img src="{% static 'assets/images/social/gmail.png' %}" alt="" style="max-height: 130px; max-width: 70%;" /></a></a>
                                     </li>
 
-                                    <li>
-                                        <a class="m-0" title="Google" target="_blank" rel="noopener noreferrer" href="#" style="background-color: #4CAF90;">🔍</a>
-                                    </li>
-                                    <li>
-                                        <a class="m-0" title="Extra Icon" target="_blank" rel="noopener noreferrer" href="#" style="background-color: #4CAF90;">🌟</a>
-                                    </li>
                                     </li>
                                 </ul>
-                            </div>
-                        </div>
 
-                            <!-- End single blog -->
-                            <!-- Start single blog -->
+                            </div>
+
+                        </div>
                             <div class="col-md-6 col-lg-3 col-sm-6 mb-lm-30px pl-lg-60px" >
                                 <div class="single-wedge">
                                     <h4 class="footer-herading">Services</h4>
@@ -267,15 +257,12 @@
                                     <h4 class="footer-herading">Contact Info</h4>
                                     <div class="footer-links">
                                         <!-- News letter area -->
-                                        <p class="address" style="color: #000000; text-decoration: none;" onmouseover="this.style.color='#4CAF90'" onmouseout="this.style.color='#000000'" href="{% url 'contact' %} ">Address: 125/7 ,Malwatta</p>
-                                        <p class="phone" style="color: #000000; text-decoration: none;" onmouseover="this.style.color='#4CAF90'" onmouseout="this.style.color='#000000'" href="{% url 'contact' %} ">Phone/Fax: 0123456789</a></p>
-                                        <p class="mail" style="color: #000000; text-decoration: none;" onmouseover="this.style.color='#4CAF90'" onmouseout="this.style.color='#000000'" href="{% url 'contact' %} ">Email: orgaGreen@gmail.com"</a></p>
-
-                                        <!-- News letter area  End -->
+                                        <p class="address" style="color: #000000; text-decoration: none;" onmouseover="this.style.color='#4CAF90'" onmouseout="this.style.color='#000000'" href="{% url 'contact' %} ">Address: 37/B , Malwatta , Colombo</p>
+                                        <p class="phone" style="color: #000000; text-decoration: none;" onmouseover="this.style.color='#4CAF90'" onmouseout="this.style.color='#000000'" href="{% url 'contact' %} ">Phone : +076 426 4976</a></p>
+                                        <p class="mail" style="color: #000000; text-decoration: none;" onmouseover="this.style.color='#4CAF90'" onmouseout="this.style.color='#000000'" href="{% url 'contact' %} ">Email: healthygoods4@gmail.com"</a></p>
                                     </div>
                                 </div>
                             </div>
-                            <!-- End single blog -->
                         </div>
                     </div>
                 </div>
@@ -295,7 +282,6 @@
                 </div>
             </div>
         </div>
-        <!-- Footer Area End -->
     </div>
     <!-- Modal -->
  {% for i in product %}
@@ -314,7 +300,6 @@
                                         <img class="img-responsive m-auto" src="/{{ img.image}}" alt="">
                                     </div>
                                           {% endfor %}
-
                                 </div>
                             </div>
                             <div class="swiper-container gallery-thumbs mt-20px slider-nav-style-1 small-nav">
@@ -332,8 +317,6 @@
                                 </div>
                             </div>
                         </div>
-
-
                         <div class="col-lg-6 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-delay="200">
                             <div class="product-details-content quickview-content">
                                 <h2>{{ i.name }}</h2>
@@ -342,7 +325,6 @@
                                         <li class="new-price">Rs.{{i.price}}</li>
                                     </ul>
                                 </div>
-
                                 <p class="mt-30px">{{i.description | safe}}</p>
 
                                 <div class="pro-details-categories-info pro-details-same-style d-flex m-0">
@@ -351,7 +333,6 @@
                                         <li>
                                             <a href="#">{{i.categories}} </a>
                                         </li>
-
                                     </ul>
                                 </div>
 
