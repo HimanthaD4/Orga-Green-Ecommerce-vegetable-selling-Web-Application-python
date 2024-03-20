@@ -31,7 +31,7 @@
 <h2>Screenshots</h2>
 
 <h3>Home Page</h3>
-<img src="https://github.com/Jayakodi67/Orga-Green/blob/main/E_shop/static/assets/images/screenshots/home1.png?raw=true">
+<img src="[https://github.com/Jayakodi67/Orga-Green/blob/main/E_shop/static/assets/images/screenshots/home1.png?raw=true](https://github.com/HimanthaD4/Orga-Green-Ecommerce-vegetable-selling-Web-Application-python/blob/main/E_shop/static/assets/images/screenshots/home1.png?raw=true)">
 <img src="https://github.com/Jayakodi67/Orga-Green/blob/main/E_shop/static/assets/images/screenshots/home.png?raw=true">
 
 <h3>Product Page</h3>
