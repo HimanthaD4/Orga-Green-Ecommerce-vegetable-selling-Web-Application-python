@@ -7,10 +7,10 @@
 </head>
 <body>
 
-<h1 align="center">Healthy Goods - E-commerce Web Application</h1>
+<h1 align="center">Orga Green - E-commerce Web Application</h1>
 
 <div style="text-align: center;">
-    <img src="https://github.com/Jayakodi67/Orga-Green/blob/main/E_shop/static/assets/images/logo2/logo.png?raw=true" alt="Orga Green Logo" style="display: inline-block; width: 200px;">
+    <img src="https://github.com/Jayakodi67/Orga-Green/blob/main/E_shop/static/assets/images/logoMain/logo.png?raw=true" alt="Orga Green Logo" style="display: inline-block; width: 200px;">
 </div>
 
 <h2>Overview</h2>
@@ -31,6 +31,7 @@
 <h2>Screenshots</h2>
 
 <h3>Home Page</h3>
+<img src="https://github.com/Jayakodi67/Orga-Green/blob/main/E_shop/static/assets/images/screenshots/home1.png?raw=true">
 <img src="https://github.com/Jayakodi67/Orga-Green/blob/main/E_shop/static/assets/images/screenshots/home.png?raw=true">
 
 <h3>Product Page</h3>
