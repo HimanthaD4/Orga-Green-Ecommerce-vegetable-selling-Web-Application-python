@@ -132,7 +132,7 @@
 <pre><code>python manage.py runserver</code></pre>
 <p>Visit <a href="http://localhost:8000">http://localhost:8000</a> in your web browser to access the application.</p>
 
-<p>Visit <a href="http://localhost:8000/admin/">http://localhost:8000//admin/</a> in your web browser to access the Admin Panel.</p>
+<p>Visit <a href="http://localhost:8000/admin/">http://localhost:8000/admin/</a> in your web browser to access the Admin Panel.</p>
 
 
 </body>
