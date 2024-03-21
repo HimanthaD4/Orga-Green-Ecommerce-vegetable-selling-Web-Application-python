@@ -10,12 +10,12 @@
 <h1 align="center">Orga Green - E-commerce Web Application</h1>
 
 <div style="text-align: center;">
-    <img src="https://github.com/Jayakodi67/Orga-Green/blob/main/E_shop/static/assets/images/logoMain/logo.png?raw=true" alt="Orga Green Logo" style="display: inline-block; width: 200px;">
+    <img src="https://github.com/HimanthaD4/Orga-Green-Ecommerce-vegetable-selling-Web-Application-python/blob/main/E_shop/static/assets/images/logo/logo.png" alt="Orga Green Logo" style="display: inline-block; width: 200px;">
 </div>
 
 <h2>Overview</h2>
 <p>
-  Healthy Goods is a Django-based e-commerce web application designed to sell organic fruits, vegetables, fertilizers, seeds, and crops.
+  Orga Green is a Django-based e-commerce web application designed to sell organic fruits, vegetables, fertilizers, seeds, and crops.
   Users can browse through the product catalog, add items to their cart, and securely checkout using Razorpay payment gateway.
 </p>
 
@@ -32,19 +32,19 @@
 
 <h3>Home Page</h3>
 <img src="https://github.com/HimanthaD4/Orga-Green-Ecommerce-vegetable-selling-Web-Application-python/blob/main/E_shop/static/assets/images/screenshots/home1.png">
-<img src="https://github.com/Jayakodi67/Orga-Green/blob/main/E_shop/static/assets/images/screenshots/home.png?raw=true">
+<img src="https://github.com/HimanthaD4/Orga-Green-Ecommerce-vegetable-selling-Web-Application-python/blob/main/E_shop/static/assets/images/screenshots/home.png">
 
 <h3>Product Page</h3>
-<img src="https://github.com/Jayakodi67/Orga-Green/blob/main/E_shop/static/assets/images/screenshots/product.png?raw=true">
+<img src="https://github.com/HimanthaD4/Orga-Green-Ecommerce-vegetable-selling-Web-Application-python/blob/main/E_shop/static/assets/images/screenshots/product.png">
 
 <h3>Cart Page</h3>
-<img src="https://github.com/Jayakodi67/Orga-Green/blob/main/E_shop/static/assets/images/screenshots/cart.png?raw=true">
+<img src="https://github.com/HimanthaD4/Orga-Green-Ecommerce-vegetable-selling-Web-Application-python/blob/main/E_shop/static/assets/images/screenshots/cart.png">
 
 <h3>Product List</h3>
-<img src="https://github.com/Jayakodi67/Orga-Green/blob/main/E_shop/static/assets/images/screenshots/productList.png?raw=true">
+<img src="https://github.com/HimanthaD4/Orga-Green-Ecommerce-vegetable-selling-Web-Application-python/blob/main/E_shop/static/assets/images/screenshots/productList.png">
 
 <h3>Single Product</h3>
-<img src="https://github.com/HimanthaD4/Orga-Green-Ecommerce-vegetable-selling-Web-Application-python/blob/main/E_shop/static/assets/images/screenshots/singleProduct.png">
+<img src="https://github.com/HimanthaD4/Orga-Green-Ecommerce-vegetable-selling-Web-Application-python/blob/main/E_shop/static/assets/images/screenshots/Screenshot%202024-03-21%20024904.png">
 
 <h3>Admin Panel</h3>
 <img src="https://github.com/HimanthaD4/Orga-Green-Ecommerce-vegetable-selling-Web-Application-python/blob/main/E_shop/static/assets/images/screenshots/admin.png">
@@ -53,7 +53,7 @@
 <img src="https://github.com/HimanthaD4/Orga-Green-Ecommerce-vegetable-selling-Web-Application-python/blob/main/E_shop/static/assets/images/screenshots/admin.png">
 
 <h3>Orders Management - Admin Panel</h3>
-<img src="https://github.com/HimanthaD4/Orga-Green-Ecommerce-vegetable-selling-Web-Application-python/blob/main/E_shop/static/assets/images/screenshots/adminProduct.png">
+<img src="https://github.com/HimanthaD4/Orga-Green-Ecommerce-vegetable-selling-Web-Application-python/blob/main/E_shop/static/assets/images/screenshots/adminOrder.png">
 
 
 <h3>Payments Methods</h3>
@@ -77,6 +77,8 @@
   <li><strong>Checkout:</strong> Securely pay for orders using Razorpay integration.</li>
   <li><strong>Order Management:</strong> Users can view their order history and check order statuses.</li>
    <li><strong>Genrate Reports:</strong> Users can genarate reports about there orders.</li>
+    <br>
+     <li><strong>Admin Panel:</strong> Manage Users, Products, Orders and etc.</li>
 </ul>
 
 <h2>Technologies Used</h2>
@@ -130,16 +132,8 @@
 <pre><code>python manage.py runserver</code></pre>
 <p>Visit <a href="http://localhost:8000">http://localhost:8000</a> in your web browser to access the application.</p>
 
-<p>Visit <a href="http://localhost:8000/admin/">http://localhost:8000</a> in your web browser to access the application.</p>
+<p>Visit <a href="http://localhost:8000/admin/">http://localhost:8000/admin/</a> in your web browser to access the Admin Panel.</p>
 
-
-<h2>Technologies Used</h2>
-<p>
-  - Django<br>
-  - JavaScript<br>
-  - Razorpay<br>
-  - XHTML (Note: HTML is not explicitly installed as it's a markup language)<br>
-</p>
 
 </body>
 </html>
