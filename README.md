@@ -15,7 +15,7 @@
 
 <h2>Overview</h2>
 <p>
-  Healthy Goods is a Django-based e-commerce web application designed to sell organic fruits, vegetables, fertilizers, seeds, and crops.
+  Orga Green is a Django-based e-commerce web application designed to sell organic fruits, vegetables, fertilizers, seeds, and crops.
   Users can browse through the product catalog, add items to their cart, and securely checkout using Razorpay payment gateway.
 </p>
 
