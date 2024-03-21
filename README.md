@@ -77,6 +77,8 @@
   <li><strong>Checkout:</strong> Securely pay for orders using Razorpay integration.</li>
   <li><strong>Order Management:</strong> Users can view their order history and check order statuses.</li>
    <li><strong>Genrate Reports:</strong> Users can genarate reports about there orders.</li>
+    <br>
+     <li><strong>Admin Panel:</strong> Manage Users, Products, Orders and etc.</li>
 </ul>
 
 <h2>Technologies Used</h2>
@@ -132,15 +134,6 @@
 
 <p>Visit <a href="http://localhost:8000/admin/">http://localhost:8000//admin/</a> in your web browser to access the Admin Panel.</p>
 
-
-<h2>Technologies Used</h2>
-<p>
-  - Django<br>
-  - Python<br>
-  - JavaScript<br>
-  - Razorpay<br>
-  - html (Note: HTML is not explicitly installed as it's a markup language)<br>
-</p>
 
 </body>
 </html>
