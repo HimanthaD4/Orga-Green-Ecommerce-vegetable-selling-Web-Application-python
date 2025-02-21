@@ -118,6 +118,11 @@
   <code> pip install xhtml2pdf </code>
 </pre>
 
+<h3>Install ckeditor</h3>
+<pre>
+  <code>pip install django-ckeditor</code>
+</pre>
+
 <h3>Create Admin(Super User)</h3>
 <pre>
   <code> python manage.py createsuperuser </code>
