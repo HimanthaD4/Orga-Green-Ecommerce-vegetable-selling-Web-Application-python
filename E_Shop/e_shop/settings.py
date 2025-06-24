@@ -29,9 +29,48 @@ INSTALLED_APPS = [
     'store_app',
     'ckeditor',
     'cart',
+    'django_ckeditor_5',
 ]
 
 CART_SESSION_ID = 'cart'
+
+
+CKEDITOR_5_CONFIGS = {
+    'default': {
+        'toolbar': ['heading', '|', 'bold', 'italic', 'link',
+                    'bulletedList', 'numberedList', 'blockQuote', 'imageUpload', ],
+    },
+    'extends': {
+        'blockToolbar': [
+            'paragraph', 'heading1', 'heading2', 'heading3',
+            '|',
+            'bulletedList', 'numberedList',
+            '|',
+            'blockQuote',
+        ],
+        'toolbar': ['heading', '|', 'outdent', 'indent', '|',
+                   'bold', 'italic', 'link', 'underline', 'strikethrough',
+                   'code','subscript', 'superscript', 'highlight', '|',
+                   'bulletedList', 'numberedList', 'todoList', '|',
+                   'blockQuote', 'insertImage', '|',
+                   'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor', '|',
+                   'alignment', '|',
+                   'codeBlock', '|',
+                   'undo', 'redo'],
+        'image': {
+            'toolbar': ['imageTextAlternative', '|', 'imageStyle:alignLeft',
+                       'imageStyle:alignRight', 'imageStyle:alignCenter', 'imageStyle:side', '|'],
+            'styles': [
+                'full',
+                'side',
+                'alignLeft',
+                'alignRight',
+                'alignCenter',
+            ]
+        }
+    }
+}
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
