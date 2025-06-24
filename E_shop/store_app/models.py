@@ -48,11 +48,6 @@ class Images(models.Model):
     product = models.ForeignKey(Product,on_delete=models.CASCADE)
 
 
-
-
-
-
-
 class Contact_us(models.Model):
     name = models.CharField(max_length=200)
     email = models.EmailField(max_length=200)

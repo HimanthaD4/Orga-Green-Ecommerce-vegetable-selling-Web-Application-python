@@ -22,7 +22,7 @@
             </div>
         </div>
 {% else %}
-{% load cart_tag %}
+{% load cart_tags %}
 
         <div class="cart-main-area pt-100px pb-100px">
             <div class="container">
@@ -60,13 +60,13 @@
                                                     {% if value.quantity > 1 %}
                                                         <a class="cart_quantity_down"  style="color: #4CAF90" href="{% url 'item_decrement' value.product_id %}"> &#9866;</a>
                                                     {% else %}
-                                                        <a class="cart_quantity_down"  style="color: #4CAF90"  href="{% url 'item_clear' key %}"> &#9866; </a>
+                                                        <a class="cart_quantity_down"  style="color: #4CAF90" href="{% url 'item_clear' key %}"> &#9866; </a>
                                                     {% endif %}
                                                 </div>
                                             </td>
                                             <td class="product-subtotal">Rs. {{ value.price|multiply:value.quantity }}0</td>
                                           <td class="product-remove">
-                                            <a href="{% url 'item_clear' key %}" style="color: #000000;">&#10006</a>
+                                            <a href="{% url 'item_clear' key %}">&#10006</a>
                                         </td>
                                         </tr>
                                     {% endfor %}

@@ -22,6 +22,17 @@
                 </div>
             </div>
         </div>
-
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById('continueShoppingBtn').addEventListener('click', function(event) {
+            window.location.href = "{% url 'products' %}";
+            event.preventDefault();
+            clearCart();
+        });
+        function clearCart() {
+            window.location.href = "{% url 'cart_clear2' %}";
+        }
+    });
+</script>
 
 {% endblock %}

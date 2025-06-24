@@ -1,6 +1,6 @@
 {% extends 'Main/base.html' %}
 {% block content %}
-{% load cart_tag %}
+{% load cart_tags %}
 
 <form method="post" action="{% url 'place_order' %}" onsubmit="return validateForm()">
     {% csrf_token %}
