@@ -2,7 +2,7 @@ import datetime
 
 from django.db import models
 from django.utils import timezone
-from django_ckeditor_5.fields import CKEditor5Field
+from ckeditor.fields import RichTextField
 from django.contrib.auth.models import User
 # Create your models here.
 
@@ -18,17 +18,15 @@ class Product(models.Model):
     CONDITION = (('GAP Certified','GAP Certified'),('No','No'))
     STOCK = ('IN STOCK','IN STOCK'),('OUT OF STOCK','OUT OF STOCK')
     STATUS = ('Publish','Publish'),('Draft','Draft')
-
     unique_id = models.CharField(unique=True,max_length=200,null=True,blank=True)
     image = models.ImageField(upload_to='Product_images/img')
     name = models.CharField(max_length=200)
     price = models.IntegerField()
     condition = models.CharField(choices=CONDITION,max_length=100)
-    description = CKEditor5Field('Text', config_name='extends', null=True)
+    description = RichTextField(null=True)
     stock = models.CharField(choices=STOCK,max_length=200)
     status = models.CharField(choices=STATUS,max_length=200)
     created_date = models.DateTimeField(default=timezone.now)
-
     categories = models.ForeignKey(Categories,on_delete=models.CASCADE)
 
 

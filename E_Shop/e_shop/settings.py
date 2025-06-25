@@ -14,7 +14,7 @@ SECRET_KEY = 'django-insecure-ny@kulrm&*b6w^f#u$(ml73=r2@826^bg*javiycft!+zk(6v(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['himantha.pythonanywhere.com']
+ALLOWED_HOSTS = ['himantha.pythonanywhere.com','*']
 
 
 # Application definition
@@ -29,7 +29,7 @@ INSTALLED_APPS = [
     'store_app',
     'ckeditor',
     'cart',
-    'django_ckeditor_5',
+    
 ]
 
 CART_SESSION_ID = 'cart'
