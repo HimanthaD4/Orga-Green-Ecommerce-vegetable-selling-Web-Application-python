@@ -5,14 +5,12 @@ echo "----- Starting build process -----"
 apt-get update && apt-get install -y \
     libpq-dev \
     python3-dev \
-    gcc
-
-# Create and activate virtual environment
-python -m venv venv
-source venv/bin/activate
+    gcc \
+    postgresql-client
 
 # Install Python dependencies
-pip install --upgrade pip
+python -m pip install --upgrade pip
+pip install psycopg2-binary  # Explicitly install psycopg2
 pip install -r requirements.txt
 
 # Django setup
