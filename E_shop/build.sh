@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "----- Starting build process -----"
 
-# Install system dependencies
+# Update and install system dependencies
 apt-get update && apt-get install -y \
     libpq-dev \
     python3-dev \
@@ -12,12 +12,17 @@ apt-get update && apt-get install -y \
 python -m venv venv
 source venv/bin/activate
 
-# Install Python dependencies
+# Upgrade pip and install Python dependencies from E_shop/requirements.txt
 python -m pip install --upgrade pip
-pip install -r requirements.txt
+pip install -r E_shop/requirements.txt
 
-# Django setup
+# Change directory to Django project
+cd E_shop
+
+# Collect static files without user input
 python manage.py collectstatic --noinput
+
+# Apply database migrations
 python manage.py migrate
 
 echo "----- Build completed successfully -----"
