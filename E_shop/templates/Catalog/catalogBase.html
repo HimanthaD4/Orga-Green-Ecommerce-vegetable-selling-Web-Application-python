@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zxx" dir="ltr">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helathy Goods</title>
+    <meta name="robots" content="index, follow" />
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/images/logo2/ico.png' %}" />
+
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/plugins.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/style.min.css' %}">
+
+    <style>
+        .sticky-nav.scrolled {
+            background-color: #000000;
+        }
+
+        @keyframes blink {
+            0%, 100% {
+                background-color: #4CAF90;
+                color: #fff;
+            }
+            50% {
+                background-color: #000000;
+                color: #4CAF90;
+            }
+        }
+
+        #blinkingButton {
+            display: inline-block;
+            padding: 5px 20px;
+            border: 2px solid #fff;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            animation: blink 1s infinite;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        #blinkingButton:hover {
+            background-color: #d62828;
+            color: #4CAF90;
+        }
+
+        #blinkingButton2 {
+            display: inline-block;
+            padding: 5px 20px;
+            border: 2px solid #fff;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        #blinkingButton2:hover {
+            background-color: #000000;
+            color: #4CAF90;
+        }
+
+        .main-menu {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .main-menu ul {
+            display: flex;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .main-menu ul li {
+            margin-right: 20px;
+        }
+
+        .main-menu .dropdown {
+            position: relative;
+        }
+
+        .main-menu .dropdown:hover .sub-menu {
+            display: block;
+        }
+
+        .main-menu .sub-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #4CAF90;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .header-nav .main-menu .dropdown .sub-menu li a:hover {
+            color: rgb(204, 204, 204) !important;
+        }
+
+        .search-element {
+            margin-left: auto;
+        }
+        .header-bottom {
+            text-align: center;
+            background-color: #DFF4F2;
+            padding: 20px 0; 
+        }
+
+        .header-logo img {
+            max-height: 110px;
+            width: auto;
+            margin: 0 auto;
+            display: block; 
+        }
+
+        .tagline {
+            color: #306030; 
+            font-size: 20px; 
+            margin-top: 10px; 
+            text-align: center;
+        }
+
+        .main-menu ul li a:hover {
+            color: #055c42 !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-wrapper">
+        <header>
+            <div class="header-top">
+                <div class="container">
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col">
+                            <div class="welcome-text">
+                                <p>Enjoy Hassle-Free Returns and Worldwide Free Shipping on Fresh Vegetables!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-bottom">
+                <div class="container">
+                    <div class="header-logo">
+                        <a href="{% url 'home' %}">
+                            <img src="{% static 'assets/images/logo2/logo5.png' %}" alt="Site Logo" />
+                        </a>
+                        <div class="tagline">Nurturing Nature for a Healthier Future</div>            
+                    </div>
+                </div>
+            </div>
+            <div class="header-nav" style="display: flex; justify-content: space-between; align-items: center; height: 60px; background-color: #4CAF90; color: #ffffff;">
+                <div class="main-menu" style="background-color: #4CAF90; padding: 10px; border-radius: 5px; width: 1050px; height: 50px; color: #ffffff;">
+
+                    <ul style="display: flex; margin: 0; padding: 0; list-style: none;">
+                        <li style="margin-right: 10px; "><a href="{% url 'main' %}" style="color: #ffffff;">Home</a></li>
+                        <li class="dropdown">
+                            <a style="color: #ffffff;text-transform: capitalize;">how to plant <i>▼</i></a>
+                            <ul class="sub-menu" style="background-color: #4CAF90;">
+                                <li><a href="{% url 'green' %}" style="color: #ffffff;font-size:medium; ">Green Chillie</a></li>
+                                <li><a href="{% url 'brinjal' %}" style="color: #ffffff; font-size:medium;">Brinjal</a></li>
+                                <li><a href="{% url 'tomato' %}" style="color: #ffffff;font-size:medium;">Tomato</a></li>
+                                <li><a href="{% url 'papaw' %}" style="color: #ffffff;font-size:medium;">Papaw</a></li>
+                                <li><a href="{% url 'mushroom' %}" style="color: #ffffff;font-size:medium;">Mushroom</a></li>
+                            </ul>
+                        </li>
+                        <li style="margin-right: 10px;"><a href="{% url 'fertilizer' %}" style="color: #ffffff; text-transform: capitalize;">fertilizer</a></li>
+                        <li style="margin-right: 10px;"><a href="{% url 'gap' %}" style="color: #ffffff; text-transform: capitalize;">GAP Introduction</a></li>
+                        
+                        <li style="margin-right: 10px;">
+                            <a href="{% url 'ph' %}" style="color: #ffffff;">
+                                <span style="text-transform: lowercase;">p</span><span style="text-transform: uppercase;">h</span> Measure Information
+                            </a>
+                        </li>
+
+                        <li style="margin-right: 10px;"><a href="{% url 'crop' %}" style="color: #ffffff; text-transform: capitalize;">Disease Detection</a></li>
+                    </ul>
+                </div>
+                <div style="padding-right: 50px; border-radius: 5px;">
+                    <a href="{% url 'home' %}" id="blinkingButton2" style="text-decoration: none; font-weight: bold; padding: 5px 20px; border: 2px solid; border-radius: 5px; width: 200px; height: 45px; color: #ffffff;">
+                        Online Shopping ►
+                    </a>
+
+                    <!-- id="blinkingButton" -->
+                </div>
+            </div>
+
+        </header>
+    </div>
+
+    {% block content %} {% endblock %}
+
+<div class="footer-area" style="background-color: #DFF4F2;">
+            <div class="footer-container">
+                <div class="footer-top">
+                    <div class="container">
+                        <div class="row">
+                            <!-- Start single blog -->
+                          <div class="col-md-6 col-lg-3 mb-md-30px mb-lm-30px">
+                            <div class="single-wedge">
+                                <div class="footer-logo">
+                                    <a href="index.html">
+                                        <img src="{% static 'assets/images/logo2/logo5.png' %}" alt="" style="max-height: 130px; max-width: 100%;" />
+                                    </a>
+                                </div>
+                                <p class="about-text"> Explore the Freshness: From Garden to Your Table
+                                </p>
+                                   <ul class="link-follow">
+                                    <li>
+
+                                        <li>
+                                            <a class="m-0" title="Facebook" target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/profile.php?id=61557473001798&mibextid=ZbWKwL" style="background-color: #ffffff;"> 
+                                                <img src="{% static 'assets/images/social/fb.png' %}" alt="" style="max-height: 130px; max-width: 120%; " /></a>
+                                        </li>
+    
+                                        <li>
+                                            <a class="m-0" title="Instagram" target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/healthy_goods12?igsh=bGRoOWxqYnp1Z3Jl" style="background-color: #ffffff;">
+                                                <img src="{% static 'assets/images/social/insta.png' %}" alt="" style="max-height: 130px; max-width: 100%;" /></a></a>
+                                        </li>
+    
+                                        <li>
+                                            <a class="m-0" title="Skype" target="_blank" rel="noopener noreferrer" href="https://vt.tiktok.com/ZSFPRaAtf/" style="background-color: #ffffff;">
+                                                <img src="{% static 'assets/images/social/tiktok.png' %}" alt="" style="max-height: 130px; max-width: 70%;" /></a></a>
+                                        </li>
+                                        <li>
+                                            <a class="m-0" title="Skype" target="_blank" rel="noopener noreferrer" href="https://www.gmail.com" style="background-color: #ffffff;">
+                                                <img src="{% static 'assets/images/social/gmail.png' %}" alt="" style="max-height: 130px; max-width: 70%;" /></a></a>
+                                        </li>
+    
+                                        </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                            <div class="col-md-6 col-lg-3 col-sm-6 mb-lm-30px pl-lg-60px">
+                                <div class="single-wedge">
+                                    <h4 class="footer-herading">Services</h4>
+                                    <div class="footer-links">
+                                        <div class="footer-row">
+                                            <ul class="align-items-center">
+                                                <li class="li">
+                                                    <a class="single-link" style="color: #000000; text-decoration: none;" onmouseover="this.style.color='#4CAF90'" onmouseout="this.style.color='#000000'">
+                                                        Contact
+                                                    </a>
+                                                </li>
+                                                <li class="li">
+                                                    <a class="single-link"
+                                                       style="color: #000000; text-decoration: none;" onmouseover="this.style.color='#4CAF90'" onmouseout="this.style.color='#000000'">
+                                                        Products
+                                                    </a>
+                                                </li>
+                                                <li class="li">
+                                                    <a class="single-link" style="color: #000000; text-decoration: none;" onmouseover="this.style.color='#4CAF90'" onmouseout="this.style.color='#000000'">
+                                                        Shop
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                          <div class="col-md-6 col-lg-3 col-sm-6 mb-lm-30px pl-lg-40px">
+                                <div class="single-wedge">
+                                    <h4 class="footer-herading">My Account</h4>
+                                    <div class="footer-links">
+                                        <div class="footer-row">
+                                            <ul class="align-items-center">
+                                                <li class="li"><a class="single-link" style="color: #000000; text-decoration: none;"onmouseover="this.style.color='#4CAF90'"onmouseout="this.style.color='#000000'">My Account</a></li>
+                                                <li class="li"><a class="single-link" style="color: #000000; text-decoration: none;" onmouseover="this.style.color='#4CAF90'" onmouseout="this.style.color='#000000'">Contact</a></li>
+                                                <li class="li"><a class="single-link" style="color: #000000; text-decoration: none;" onmouseover="this.style.color='#4CAF90'" onmouseout="this.style.color='#000000'">Shopping cart</a></li>
+                                                <li class="li"><a class="single-link" style="color: #000000; text-decoration: none;" onmouseover="this.style.color='#4CAF90'" onmouseout="this.style.color='#000000'">Shop</a></li>
+                                                <li class="li"><a class="single-link" style="color: #000000; text-decoration: none;" onmouseover="this.style.color='#4CAF90'" onmouseout="this.style.color='#000000'">Services Login</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-3 col-sm-12">
+                                <div class="single-wedge">
+                                    <h4 class="footer-herading">Contact Info</h4>
+                                    <div class="footer-links">
+                                        <!-- News letter area -->
+                                        <p class="address" style="color: #000000; text-decoration: none;"  onmouseover="this.style.color='#4CAF90'"  onmouseout="this.style.color='#000000'">Address : 37/B , Malwatta , Colombo</p>
+                                        <p class="phone" style="color: #000000; text-decoration: none;" onmouseover="this.style.color='#4CAF90'"  onmouseout="this.style.color='#000000'">Phone : +076 884 0107</p>
+                                        <p class="mail" style="color: #000000; text-decoration: none;"  onmouseover="this.style.color='#4CAF90'"  onmouseout="this.style.color='#000000'">Email : orgaGreen@gmail.com"</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <div class="container">
+                        <div class="line-shape-top line-height-1">
+                            <div class="row flex-md-row-reverse align-items-center" >
+                                <div class="col-md-6 text-center text-md-end">
+                                    <div class="payment-mth"><a href="#"><img class="img img-fluid" src="{%static 'assets/images/icons/payment.png' %}" alt="payment-image"></a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>
