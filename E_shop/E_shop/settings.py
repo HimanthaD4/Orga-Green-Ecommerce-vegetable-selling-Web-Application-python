@@ -63,11 +63,12 @@ WSGI_APPLICATION = 'E_shop.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('DB_NAME', 'orga-green-db'),
+        'NAME': os.environ.get('DB_NAME', 'orgagreen'),
         'USER': os.environ.get('DB_USER', 'orgagreen_user'),
         'PASSWORD': os.environ.get('DB_PASSWORD', 'hXJnWyHZyx9xPvpE1a1c1CGLofFSWjnb'),
         'HOST': os.environ.get('DB_HOST', 'dpg-d1ef5e2li9vc73a04c80-a.oregon-postgres.render.com'),
         'PORT': os.environ.get('DB_PORT', '5432'),
+        
     }
 }
 

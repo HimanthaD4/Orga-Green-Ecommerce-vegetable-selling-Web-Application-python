@@ -8,9 +8,13 @@ apt-get update && apt-get install -y \
     gcc \
     postgresql-client
 
-# Install Python dependencies
+# Create and activate virtual environment
+python -m venv venv
+source venv/bin/activate
+
+# Install Python dependencies with explicit psycopg2 installation
 python -m pip install --upgrade pip
-pip install psycopg2-binary  # Explicitly install psycopg2
+pip install psycopg2-binary==2.9.7 --no-cache-dir
 pip install -r requirements.txt
 
 # Django setup
