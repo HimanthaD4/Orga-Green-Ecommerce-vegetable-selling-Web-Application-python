@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Always run from repo root
+cd "$(dirname "$0")"  # ensures inside E_shop
+
 python -m venv venv
 source venv/bin/activate
 
