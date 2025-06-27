@@ -5,25 +5,25 @@
 <div class="product-details-area pt-100px pb-100px">
     <div class="container">
         <div class="row">
-            <div class="col-lg-6 col-sm-12 col-xs-12 mb-lm-30px mb-md-30px mb-sm-30px">
-                <!-- Swiper -->
+            <!-- Product Image Section -->
+            <div class="col-lg-6 col-md-12 mb-4">
                 <div class="swiper-container zoom-top">
                     <div class="swiper-wrapper">
                         {% for i in prod.images_set.all %}
-                            <div class="swiper-slide">
-                                <img class="img-responsive m-auto" src="/{{i.image}}" alt="">
-                                <a class="venobox full-preview" style="background-color: #4CAF90" data-gall="myGallery" href="/{{i.image}}">
-                                    <i>&#9776</i>
+                            <div class="swiper-slide text-center">
+                                <img class="img-fluid m-auto" src="/{{ i.image }}" alt="Product Image">
+                                <a class="venobox full-preview" style="background-color: #4CAF90" data-gall="myGallery" href="/{{ i.image }}">
+                                    <i style="font-size: 1.5rem;">&#9776;</i>
                                 </a>
                             </div>
                         {% endfor %}
                     </div>
                 </div>
-                <div class="swiper-container mt-20px zoom-thumbs slider-nav-style-1 small-nav">
+                <div class="swiper-container mt-3 zoom-thumbs slider-nav-style-1 small-nav">
                     <div class="swiper-wrapper">
                         {% for i in prod.images_set.all %}
-                            <div class="swiper-slide">
-                                <img class="img-responsive m-auto" src="/{{i.image}}" alt="" s>
+                            <div class="swiper-slide text-center">
+                                <img class="img-fluid m-auto" src="/{{ i.image }}" alt="Product Thumbnail">
                             </div>
                         {% endfor %}
                     </div>
@@ -33,58 +33,50 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-delay="200">
-                <div class="product-details-content quickview-content ml-25px">
-                    <h2>{{prod.name}}</h2>
-                    <div class="pricing-meta">
-                        <ul class="d-flex">
-                            <li class="new-price">Rs.{{prod.price}}</li>
+
+            <!-- Product Info Section -->
+            <div class="col-lg-6 col-md-12" data-aos="fade-up" data-aos-delay="200">
+                <div class="product-details-content quickview-content ml-0">
+                    <h2>{{ prod.name }}</h2>
+                    <div class="pricing-meta mb-2">
+                        <ul class="d-flex list-unstyled">
+                            <li class="new-price fs-4 fw-bold">Rs.{{ prod.price }}</li>
                         </ul>
                     </div>
-                    <div class="pro-details-rating-wrap">
-                        <div class="rating-product">
-                            &#9733;
-                            &#9733;
-                            &#9733;
-                            &#9733;
-                            &#9733;
+                    <div class="pro-details-rating-wrap mb-3">
+                        <div class="rating-product text-warning">
+                            &#9733; &#9733; &#9733; &#9733; &#9733;
                         </div>
                     </div>
-                    <div class="pro-details-categories-info pro-details-same-style d-flex m-0">
-                        <span  style="color: #4CAF90;">Categories: </span>
-                        <ul class="d-flex">
-                            <li><a href="#">{{prod.categories}}</a></li>
+
+                    <div class="pro-details-categories-info d-flex align-items-center mb-3">
+                        <span class="me-2" style="color: #4CAF90;">Categories:</span>
+                        <ul class="list-unstyled m-0">
+                            <li><a href="/products/?categories={{ prod.categories.id }}" class="text-decoration-none" style="color: #000;" onmouseover="this.style.color='#4CAF90'" onmouseout="this.style.color='#000'">{{ prod.categories }}</a></li>
                         </ul>
                     </div>
 
-                    <div class="pro-details-quality">
+                    <div class="pro-details-quality mb-4">
                         <div class="pro-details-cart">
                             <form method="post" action="{% url 'cart_add' id=prod.id %}">
                                 {% csrf_token %}
-                                <button type="submit" class="add-cart" style="background-color: #4CAF90">Add To Cart</button>
+                                <button type="submit" class="btn text-white" style="background-color: #4CAF90;">Add To Cart</button>
                             </form>
                         </div>
                     </div>
-                </div>
-                <!-- product details description area start -->
-                <div class="description-review-wrapper" >
-                    <div class="description-review-topbar nav">
-                        <p style="color: #4CAF90; font-size: large">Description</p>
-                    </div>
-                    <div class="tab-content description-review-bottom">
-                        <div id="des-details2" class="tab-pane"></div>
-                        <div id="des-details1" class="tab-pane active">
-                            <div class="product-description-wrapper">
-                                <p>{{prod.description | safe}}</p>
-                            </div>
+
+                    <div class="description-review-wrapper mt-4">
+                        <div class="description-review-topbar mb-2">
+                            <h5 style="color: #4CAF90;">Description</h5>
+                        </div>
+                        <div class="product-description-wrapper">
+                            <p>{{ prod.description | safe }}</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </div> 
 </div>
-<script>
 
-</script>
 {% endblock %}
