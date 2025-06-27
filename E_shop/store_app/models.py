@@ -4,6 +4,7 @@ from django.db import models
 from django.utils import timezone
 from ckeditor.fields import RichTextField
 from django.contrib.auth.models import User
+from cloudinary.models import CloudinaryField
 # Create your models here.
 
 
@@ -19,7 +20,7 @@ class Product(models.Model):
     STOCK = ('IN STOCK','IN STOCK'),('OUT OF STOCK','OUT OF STOCK')
     STATUS = ('Publish','Publish'),('Draft','Draft')
     unique_id = models.CharField(unique=True,max_length=200,null=True,blank=True)
-    image = models.ImageField(upload_to='Product_images/img')
+    image = CloudinaryField('image')
     name = models.CharField(max_length=200)
     price = models.IntegerField()
     condition = models.CharField(choices=CONDITION,max_length=100)
@@ -42,7 +43,7 @@ class Product(models.Model):
 
 
 class Images(models.Model):
-    image = models.ImageField(upload_to='Product_images/img')
+    image = CloudinaryField('image') 
     product = models.ForeignKey(Product,on_delete=models.CASCADE)
 
 class Contact_us(models.Model):
