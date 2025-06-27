@@ -2,3 +2,5 @@
 * text=auto
 db.sqlite3
 venv/
+staticfiles/
+__pycache__/
