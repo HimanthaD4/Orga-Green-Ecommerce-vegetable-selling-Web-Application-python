@@ -27,7 +27,7 @@
   <li><strong>Checkout:</strong> Securely pay for orders using Razorpay integration.</li>
   <li><strong>Order Management:</strong> Users can view their order history and check order statuses.</li>
 </ul>
-
+<!-- cd E_shop && source venv/bin/activate && gunicorn E_shop.wsgi:application -->
 <h2>Screenshots</h2>
 
 <h3>Home Page</h3>

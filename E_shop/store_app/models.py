@@ -18,7 +18,6 @@ class Product(models.Model):
     CONDITION = (('GAP Certified','GAP Certified'),('No','No'))
     STOCK = ('IN STOCK','IN STOCK'),('OUT OF STOCK','OUT OF STOCK')
     STATUS = ('Publish','Publish'),('Draft','Draft')
-
     unique_id = models.CharField(unique=True,max_length=200,null=True,blank=True)
     image = models.ImageField(upload_to='Product_images/img')
     name = models.CharField(max_length=200)
@@ -28,7 +27,6 @@ class Product(models.Model):
     stock = models.CharField(choices=STOCK,max_length=200)
     status = models.CharField(choices=STATUS,max_length=200)
     created_date = models.DateTimeField(default=timezone.now)
-
     categories = models.ForeignKey(Categories,on_delete=models.CASCADE)
 
 

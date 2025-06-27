@@ -8,9 +8,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-ny@kulrm&*b6w^f#u$(ml73=r2@826^bg*javiycft!+zk(6v(')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False  # Change to False for production
+DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = ['*']  # Update with your actual domain in production
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '*').split(',')
 
 # Application definition
 INSTALLED_APPS = [
@@ -68,24 +68,15 @@ DATABASES = {
         'PASSWORD': os.environ.get('DB_PASSWORD', 'hXJnWyHZyx9xPvpE1a1c1CGLofFSWjnb'),
         'HOST': os.environ.get('DB_HOST', 'dpg-d1ef5e2li9vc73a04c80-a.oregon-postgres.render.com'),
         'PORT': os.environ.get('DB_PORT', '5432'),
-        
     }
 }
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
+    {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
+    {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator'},
+    {'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator'},
+    {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},
 ]
 
 # Internationalization
@@ -94,29 +85,28 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
-# Static files (CSS, JavaScript, Images)
+# Static files
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-# Media files
+# Media files via Cloudinary
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
-# Cloudinary configuration
+# Cloudinary Config from env
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'dlvwqb4lb',
-    'API_KEY': '727942269635366',
-    'API_SECRET': 'RlP9OFvJB8y941L_mxuVTEzVXbc',
+    'CLOUD_NAME': os.environ.get('CLOUDINARY_CLOUD_NAME', 'dlvwqb4lb'),
+    'API_KEY': os.environ.get('CLOUDINARY_API_KEY', '727942269635366'),
+    'API_SECRET': os.environ.get('CLOUDINARY_API_SECRET', 'RlP9OFvJB8y941L_mxuVTEzVXbc'),
 }
 
-# Razorpay configuration
+# Razorpay
 RAZORPAY_KEY_ID = os.environ.get('RAZORPAY_KEY_ID', 'rzp_test_jo79zyHyKt2Pz5')
-RAZORPAY_KEY_SECRECT = os.environ.get('RAZORPAY_KEY_SECRECT', 'VtaXU4PsMH4MkpoZpQmV3qGf')
+RAZORPAY_KEY_SECRET = os.environ.get('RAZORPAY_KEY_SECRET', 'VtaXU4PsMH4MkpoZpQmV3qGf')
 
-# Security settings for production
+# Security for production
 if not DEBUG:
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
     SECURE_SSL_REDIRECT = True
