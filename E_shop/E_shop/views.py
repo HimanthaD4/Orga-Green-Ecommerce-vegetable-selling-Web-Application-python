@@ -19,7 +19,7 @@ from django.http import HttpResponse
 from reportlab.pdfgen import canvas
 from django.contrib import messages
 
-client = razorpay.Client(auth=(settings.RAZORPAY_KEY_ID,settings.RAZORPAY_KEY_SECRECT))
+client = razorpay.Client(auth=(settings.RAZORPAY_KEY_ID,settings.RAZORPAY_KEY_SECRET))
 
 def BASE(request):
     return render(request,'Main/base.html')
