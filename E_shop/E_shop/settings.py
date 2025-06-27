@@ -97,9 +97,9 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # Cloudinary Config from env
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': os.environ.get('CLOUDINARY_CLOUD_NAME', 'dlvwqb4lb'),
-    'API_KEY': os.environ.get('CLOUDINARY_API_KEY', '727942269635366'),
-    'API_SECRET': os.environ.get('CLOUDINARY_API_SECRET', 'RlP9OFvJB8y941L_mxuVTEzVXbc'),
+    'CLOUD_NAME': os.environ.get('CLOUDINARY_CLOUD_NAME'),
+    'API_KEY': os.environ.get('CLOUDINARY_API_KEY'),
+    'API_SECRET': os.environ.get('CLOUDINARY_API_SECRET'),
 }
 
 # Razorpay
