@@ -5,25 +5,27 @@
 <div class="product-details-area pt-100px pb-100px">
     <div class="container">
         <div class="row">
+
             <!-- Product Image Section -->
             <div class="col-lg-6 col-md-12 mb-4">
                 <div class="swiper-container zoom-top">
                     <div class="swiper-wrapper">
                         {% for i in prod.images_set.all %}
                             <div class="swiper-slide text-center">
-                                <img class="img-fluid m-auto" src="/{{ i.image }}" alt="Product Image">
-                                <a class="venobox full-preview" style="background-color: #4CAF90" data-gall="myGallery" href="/{{ i.image }}">
+                                <img class="img-fluid m-auto" src="{{ i.image.url }}" alt="Product Image" style="max-height: 500px; object-fit: contain;">
+                                <a class="venobox full-preview" style="background-color: #4CAF90;" data-gall="myGallery" href="{{ i.image.url }}">
                                     <i style="font-size: 1.5rem;">&#9776;</i>
                                 </a>
                             </div>
                         {% endfor %}
                     </div>
                 </div>
+
                 <div class="swiper-container mt-3 zoom-thumbs slider-nav-style-1 small-nav">
                     <div class="swiper-wrapper">
                         {% for i in prod.images_set.all %}
                             <div class="swiper-slide text-center">
-                                <img class="img-fluid m-auto" src="/{{ i.image }}" alt="Product Thumbnail">
+                                <img class="img-fluid m-auto" src="{{ i.image.url }}" alt="Product Thumbnail" style="max-height: 100px; object-fit: contain;">
                             </div>
                         {% endfor %}
                     </div>
@@ -37,12 +39,14 @@
             <!-- Product Info Section -->
             <div class="col-lg-6 col-md-12" data-aos="fade-up" data-aos-delay="200">
                 <div class="product-details-content quickview-content ml-0">
-                    <h2>{{ prod.name }}</h2>
-                    <div class="pricing-meta mb-2">
+                    <h2 class="mb-3">{{ prod.name }}</h2>
+
+                    <div class="pricing-meta mb-3">
                         <ul class="d-flex list-unstyled">
-                            <li class="new-price fs-4 fw-bold">Rs.{{ prod.price }}</li>
+                            <li class="new-price fs-4 fw-bold">Rs. {{ prod.price }}</li>
                         </ul>
                     </div>
+
                     <div class="pro-details-rating-wrap mb-3">
                         <div class="rating-product text-warning">
                             &#9733; &#9733; &#9733; &#9733; &#9733;
@@ -52,7 +56,11 @@
                     <div class="pro-details-categories-info d-flex align-items-center mb-3">
                         <span class="me-2" style="color: #4CAF90;">Categories:</span>
                         <ul class="list-unstyled m-0">
-                            <li><a href="/products/?categories={{ prod.categories.id }}" class="text-decoration-none" style="color: #000;" onmouseover="this.style.color='#4CAF90'" onmouseout="this.style.color='#000'">{{ prod.categories }}</a></li>
+                            <li>
+                                <a href="/products/?categories={{ prod.categories.id }}" class="text-decoration-none" style="color: #000;" onmouseover="this.style.color='#4CAF90'" onmouseout="this.style.color='#000'">
+                                    {{ prod.categories.name }}
+                                </a>
+                            </li>
                         </ul>
                     </div>
 
@@ -70,13 +78,14 @@
                             <h5 style="color: #4CAF90;">Description</h5>
                         </div>
                         <div class="product-description-wrapper">
-                            <p>{{ prod.description | safe }}</p>
+                            <p>{{ prod.description|safe }}</p>
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
-    </div> 
+    </div>
 </div>
 
 {% endblock %}
