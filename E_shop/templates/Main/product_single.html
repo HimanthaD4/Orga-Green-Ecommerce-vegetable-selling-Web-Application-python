@@ -10,9 +10,17 @@
             <div class="col-lg-6 col-md-12 mb-4">
                 <div class="swiper-container zoom-top">
                     <div class="swiper-wrapper">
+                        <!-- Main product image -->
+                        <div class="swiper-slide text-center">
+                            <img class="img-fluid m-auto" src="{{ prod.image.url }}" alt="{{ prod.name }}" style="max-height: 500px; object-fit: contain;">
+                            <a class="venobox full-preview" style="background-color: #4CAF90;" data-gall="myGallery" href="{{ prod.image.url }}">
+                                <i style="font-size: 1.5rem;">&#9776;</i>
+                            </a>
+                        </div>
+                        <!-- Additional images -->
                         {% for i in prod.images_set.all %}
                             <div class="swiper-slide text-center">
-                                <img class="img-fluid m-auto" src="{{ i.image.url }}" alt="Product Image" style="max-height: 500px; object-fit: contain;">
+                                <img class="img-fluid m-auto" src="{{ i.image.url }}" alt="{{ prod.name }}" style="max-height: 500px; object-fit: contain;">
                                 <a class="venobox full-preview" style="background-color: #4CAF90;" data-gall="myGallery" href="{{ i.image.url }}">
                                     <i style="font-size: 1.5rem;">&#9776;</i>
                                 </a>
@@ -23,9 +31,14 @@
 
                 <div class="swiper-container mt-3 zoom-thumbs slider-nav-style-1 small-nav">
                     <div class="swiper-wrapper">
+                        <!-- Main product thumbnail -->
+                        <div class="swiper-slide text-center">
+                            <img class="img-fluid m-auto" src="{{ prod.image.url }}" alt="{{ prod.name }}" style="max-height: 100px; object-fit: contain;">
+                        </div>
+                        <!-- Additional thumbnails -->
                         {% for i in prod.images_set.all %}
                             <div class="swiper-slide text-center">
-                                <img class="img-fluid m-auto" src="{{ i.image.url }}" alt="Product Thumbnail" style="max-height: 100px; object-fit: contain;">
+                                <img class="img-fluid m-auto" src="{{ i.image.url }}" alt="{{ prod.name }}" style="max-height: 100px; object-fit: contain;">
                             </div>
                         {% endfor %}
                     </div>
@@ -44,6 +57,9 @@
                     <div class="pricing-meta mb-3">
                         <ul class="d-flex list-unstyled">
                             <li class="new-price fs-4 fw-bold">Rs. {{ prod.price }}</li>
+                            {% if prod.condition == 'GAP Certified' %}
+                            <li class="ms-3"><span class="badge bg-success">{{ prod.condition }}</span></li>
+                            {% endif %}
                         </ul>
                     </div>
 
@@ -64,12 +80,24 @@
                         </ul>
                     </div>
 
+                    <div class="pro-details-stock mb-3">
+                        <span>Availability: 
+                            <strong class="{% if prod.stock == 'IN STOCK' %}text-success{% else %}text-danger{% endif %}">
+                                {{ prod.stock }}
+                            </strong>
+                        </span>
+                    </div>
+
                     <div class="pro-details-quality mb-4">
                         <div class="pro-details-cart">
+                            {% if prod.stock == 'IN STOCK' %}
                             <form method="post" action="{% url 'cart_add' id=prod.id %}">
                                 {% csrf_token %}
                                 <button type="submit" class="btn text-white" style="background-color: #4CAF90;">Add To Cart</button>
                             </form>
+                            {% else %}
+                            <button class="btn btn-secondary" disabled>Out of Stock</button>
+                            {% endif %}
                         </div>
                     </div>
 
@@ -78,7 +106,7 @@
                             <h5 style="color: #4CAF90;">Description</h5>
                         </div>
                         <div class="product-description-wrapper">
-                            <p>{{ prod.description|safe }}</p>
+                            {{ prod.description|safe }}
                         </div>
                     </div>
                 </div>
@@ -87,5 +115,37 @@
         </div>
     </div>
 </div>
+
+<!-- Initialize Swiper and other scripts -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Main image slider
+    const zoomTop = new Swiper('.zoom-top', {
+        spaceBetween: 10,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        thumbs: {
+            swiper: {
+                el: '.zoom-thumbs',
+                slidesPerView: 4,
+                spaceBetween: 10,
+                freeMode: true,
+                watchSlidesVisibility: true,
+                watchSlidesProgress: true,
+            }
+        }
+    });
+
+    // Initialize venobox for image zoom
+    $('.venobox').venobox({
+        bgcolor: '#4CAF90',
+        overlayColor: 'rgba(0,0,0,0.85)',
+        closeBackground: '#4CAF90',
+        closeColor: '#ffffff'
+    });
+});
+</script>
 
 {% endblock %}
