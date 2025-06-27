@@ -1,6 +1,7 @@
 from io import BytesIO
 from django.shortcuts import render,redirect
-from pyexpat.errors import messages
+# from pyexpat.errors import messages
+from django.contrib import messages
 from store_app.models import Product,Categories,Contact_us,Order,OrderItem
 from django.conf import settings
 from django.contrib.auth.models import User
