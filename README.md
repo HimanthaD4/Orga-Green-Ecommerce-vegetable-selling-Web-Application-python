@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+![image](https://github.com/user-attachments/assets/82bf74a4-dd7c-47ea-b5a2-27e3d8b6c16c)<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -52,6 +52,7 @@
 
 <h3>Admin Panel</h3>
 <img src="https://github.com/HimanthaD4/Orga-Green-Ecommerce-vegetable-selling-Web-Application-python/blob/main/E_shop/static/assets/images/screenshots/admin.png?raw=true">
+<img src="https://github.com/HimanthaD4/Orga-Green-Ecommerce-vegetable-selling-Web-Application-python/blob/main/E_shop/static/assets/images/screenshots/admin2.png?raw=true">
 
 <h2>Technologies Used</h2>
 <p>
