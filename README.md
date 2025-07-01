@@ -26,6 +26,7 @@
   <li><strong>Shopping Cart:</strong> Add products to the cart, update quantities, and remove items as needed.</li>
   <li><strong>Checkout:</strong> Securely pay for orders using Razorpay integration.</li>
   <li><strong>Order Management:</strong> Users can view their order history and check order statuses.</li>
+  <li><strong>Genrate Reports:</strong> Users can genarate reports about there orders.</li>
   <li><strong>Admin Panel:</strong> A dedicated Django Admin Panel is available for managing products, orders, user accounts, and all backend operations efficiently.</li>
 </ul>
 
