@@ -1,99 +1,83 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<h1 align="center">🌿 Orga Green - Organic E-commerce Web Application 🌿</h1>
 
-</head>
-<body>
-
-<h1 align="center">Orga-Green-Organic-Ecommerce-Platform</h1>
-
-<div style="text-align: center;">
-    <img src="https://github.com/Jayakodi67/Orga-Green/blob/main/E_shop/static/assets/images/logo2/logo.png?raw=true" alt="Orga Green Logo" style="display: inline-block; width: 200px;">
-</div>
-
-<h2>Overview</h2>
-<p>
-  Orga Green is a Django-based e-commerce web application designed to sell organic fruits, vegetables, fertilizers, seeds, and crops.
-  Users can browse through the product catalog, add items to their cart, and securely checkout using Razorpay payment gateway.
+<p align="center">
+    <img src="https://github.com/Jayakodi67/Orga-Green/blob/main/E_shop/static/assets/images/logo2/logo.png?raw=true" alt="Orga Green Logo" width="200">
 </p>
 
-<h2>Features</h2>
-<ul>
-  <li><strong>Product Catalog:</strong> Browse a wide range of organic products including fruits, vegetables, fertilizers, seeds, and crops.</li>
-  <li><strong>User Authentication:</strong> Users can register, log in, and manage their profiles.</li>
-  <li><strong>Shopping Cart:</strong> Add products to the cart, update quantities, and remove items as needed.</li>
-  <li><strong>Checkout:</strong> Securely pay for orders using Razorpay integration.</li>
-  <li><strong>Order Management:</strong> Users can view their order history and check order statuses.</li>
-  <li><strong>Genrate Reports:</strong> Users can genarate reports about there orders.</li>
-  <li><strong>Admin Panel:</strong> A dedicated Django Admin Panel is available for managing products, orders, user accounts, and all backend operations efficiently.</li>
-</ul>
+---
 
-<h2>Screenshots</h2>
+## 🌐 Live Demo
 
-<h3>Home Page</h3>
-<img src="https://github.com/HimanthaD4/Orga-Green-Ecommerce-vegetable-selling-Web-Application-python/blob/main/E_shop/static/assets/images/screenshots/home.png?raw=true">
+🚀 Experience the live project here: [Orga Green Live Website](https://orga-green-ecommerce-vegetable-selling-ppn6.onrender.com/)
 
-<h3>Product Page</h3>
-<img src="https://github.com/HimanthaD4/Orga-Green-Ecommerce-vegetable-selling-Web-Application-python/blob/main/E_shop/static/assets/images/screenshots/product.png?raw=true">
+---
 
-<h3>Cart Page</h3>
-<img src="https://github.com/HimanthaD4/Orga-Green-Ecommerce-vegetable-selling-Web-Application-python/blob/main/E_shop/static/assets/images/screenshots/cart.png">
+## 📖 Overview
 
-<h3>Contact Page</h3>
-<img src="https://github.com/HimanthaD4/Orga-Green-Ecommerce-vegetable-selling-Web-Application-python/blob/main/E_shop/static/assets/images/screenshots/contact.png?raw=true">
+**Orga Green** is a Django-based, fully responsive e-commerce web application designed to promote and sell organic products such as fruits, vegetables, seeds, fertilizers, and crops. Users can browse the product catalog, manage their shopping cart, securely checkout using Razorpay, and track their orders.
 
-<h3>About Page</h3>
-<img src="https://github.com/HimanthaD4/Orga-Green-Ecommerce-vegetable-selling-Web-Application-python/blob/main/E_shop/static/assets/images/screenshots/about.png?raw=true">
+---
 
-<h3>Billing Details Page</h3>
-<img src="https://github.com/HimanthaD4/Orga-Green-Ecommerce-vegetable-selling-Web-Application-python/blob/main/E_shop/static/assets/images/screenshots/bill.png?raw=true">
+## ✅ Key Features
 
-<h3>Admin Panel</h3>
-<img src="https://github.com/HimanthaD4/Orga-Green-Ecommerce-vegetable-selling-Web-Application-python/blob/main/E_shop/static/assets/images/screenshots/admin.png?raw=true">
-<img src="https://github.com/HimanthaD4/Orga-Green-Ecommerce-vegetable-selling-Web-Application-python/blob/main/E_shop/static/assets/images/screenshots/admin2.png?raw=true">
+- **Product Catalog:** Explore a wide range of organic fruits, vegetables, fertilizers, seeds, and crops.
+- **User Authentication:** Register, log in, and manage user profiles securely.
+- **Shopping Cart:** Add, update, or remove products in your cart with ease.
+- **Secure Checkout:** Razorpay payment gateway integration for hassle-free transactions.
+- **Order Management:** View order history, check statuses, and generate invoices.
+- **Admin Panel:** Powerful Django admin dashboard to manage products, orders, and users.
+- **Reports Generation:** Users can generate reports of their orders.
+- **Fully Responsive Design:** Optimized for all screen sizes (mobile, tablet, desktop).
 
-<h2>Technologies Used</h2>
-<p>
-  - Django<br>
-  - JavaScript<br>
-  - Razorpay<br>
-  - XHTML (Note: HTML is not explicitly installed as it's a markup language)<br>
-  - Shopping Cart <br>
-</p>
+---
 
-<h2>Installation</h2>
+## 🖥️ Screenshots
 
-<h3>Prerequisites</h3>
-<p>
-  - Python <br>
-  - Django
-</p>
+### Home Page
+![Home](https://github.com/HimanthaD4/Orga-Green-Ecommerce-vegetable-selling-Web-Application-python/blob/main/E_shop/static/assets/images/screenshots/home.png?raw=true)
 
-<h3>Install Django</h3>
-<pre>
-  <code>pip install django</code>
-</pre>
+### Product Page
+![Product](https://github.com/HimanthaD4/Orga-Green-Ecommerce-vegetable-selling-Web-Application-python/blob/main/E_shop/static/assets/images/screenshots/product.png?raw=true)
 
-<h3>Install Shopping Cart</h3>
-<pre>
-  <code>pip install shopping-cart-package</code>
-</pre>
+### Cart Page
+![Cart](https://github.com/HimanthaD4/Orga-Green-Ecommerce-vegetable-selling-Web-Application-python/blob/main/E_shop/static/assets/images/screenshots/cart.png?raw=true)
 
-<h3>Running the Application</h3>
-<pre><code>python manage.py runserver</code></pre>
-<p>Visit <a href="http://localhost:8000">http://localhost:8000</a> in your web browser to access the application.</p>
+### Contact Page
+![Contact](https://github.com/HimanthaD4/Orga-Green-Ecommerce-vegetable-selling-Web-Application-python/blob/main/E_shop/static/assets/images/screenshots/contact.png?raw=true)
 
-<h3>Install Razorpay</h3>
-<pre>
-  <code>pip install razorpay</code>
-</pre>
+### About Page
+![About](https://github.com/HimanthaD4/Orga-Green-Ecommerce-vegetable-selling-Web-Application-python/blob/main/E_shop/static/assets/images/screenshots/about.png?raw=true)
 
-<h3>Install Xhtml</h3>
-<pre>
-  <code> pip install xhtml2pdf </code>
-</pre>
+### Billing Details Page
+![Billing](https://github.com/HimanthaD4/Orga-Green-Ecommerce-vegetable-selling-Web-Application-python/blob/main/E_shop/static/assets/images/screenshots/bill.png?raw=true)
 
-</body>
-</html>
+### Admin Panel
+![Admin 1](https://github.com/HimanthaD4/Orga-Green-Ecommerce-vegetable-selling-Web-Application-python/blob/main/E_shop/static/assets/images/screenshots/admin.png?raw=true)
+![Admin 2](https://github.com/HimanthaD4/Orga-Green-Ecommerce-vegetable-selling-Web-Application-python/blob/main/E_shop/static/assets/images/screenshots/admin2.png?raw=true)
+
+---
+
+## 🛠️ Technologies Used
+
+- Django (Backend Framework)
+- JavaScript (Frontend Interactivity)
+- Razorpay (Payment Gateway)
+- HTML5 & CSS3 (Responsive UI)
+- Xhtml2pdf (PDF Invoice Generation)
+
+---
+
+## ⚙️ Installation & Setup
+
+### Prerequisites
+
+- Python (3.x)
+- Django
+- Pip package manager
+
+### Install Dependencies
+
+```bash
+pip install django
+pip install razorpay
+pip install xhtml2pdf
