@@ -1,4 +1,4 @@
-<h1 align="center">🌿 Orga Green - Organic E-commerce Web Application 🌿</h1>
+<h1 align="center">🌿 Orga Green - Organic E-commerce Platform 🌿</h1>
 
 <p align="center">
     <img src="https://github.com/Jayakodi67/Orga-Green/blob/main/E_shop/static/assets/images/logo2/logo.png?raw=true" alt="Orga Green Logo" width="200">
@@ -54,7 +54,7 @@
 
 ### Admin Panel
 ![Admin 1](https://github.com/HimanthaD4/Orga-Green-Ecommerce-vegetable-selling-Web-Application-python/blob/main/E_shop/static/assets/images/screenshots/admin.png?raw=true)
-![Admin 2](https://github.com/HimanthaD4/Orga-Green-Ecommerce-vegetable-selling-Web-Application-python/blob/main/E_shop/static/assets/images/screenshots/admin2.png?raw=true)
+
 
 ---
 
