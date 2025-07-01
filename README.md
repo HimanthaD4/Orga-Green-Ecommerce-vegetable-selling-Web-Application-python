@@ -81,3 +81,4 @@
 pip install django
 pip install razorpay
 pip install xhtml2pdf
+pip install shopping-cart-package
