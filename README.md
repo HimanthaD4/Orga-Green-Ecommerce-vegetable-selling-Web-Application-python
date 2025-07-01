@@ -9,7 +9,7 @@
 ## 🌐 Live Demo
 
 🚀 Experience the live project here: [Orga Green Live Website](https://orga-green-ecommerce-vegetable-selling-ppn6.onrender.com/)<br>
-🚀 Experience the admin Panel here: [Orga Green Live Website](https://orga-green-ecommerce-vegetable-selling-ppn6.onrender.com/admin)
+🚀 Experience the admin Panel here: [Orga Green Admin Panel](https://orga-green-ecommerce-vegetable-selling-ppn6.onrender.com/admin)
 
 ---
 
